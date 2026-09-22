@@ -1,0 +1,15 @@
+* {
+  color: #3B4252;
+}
+
+h1 {
+  color: #2E3440;
+}
+
+.destacado {
+  font-weight: bold;
+}
+
+#titulo-principal {
+  text-align: center;
+}

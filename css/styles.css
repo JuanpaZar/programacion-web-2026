@@ -1,13 +1,41 @@
+:root {
+  --color-fondo: #2E3440;
+  --color-secundario: #3B4252;
+  --color-acento: #88C0D0;
+  --color-texto: #ECEFF4;
+  --fuente-titulos: 'Poppins', sans-serif;
+  --fuente-texto: 'Inter', sans-serif;
+}
+
 * {
-  color: #3B4252;
+  color: var(--color-secundario);
+}
+
+body {
+  font-family: var(--fuente-texto);
 }
 
 h1 {
-  color: #2E3440;
+  color: var(--color-fondo);
+  font-family: var(--fuente-titulos);
+  font-size: 4rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+h2,
+h3 {
+  font-family: var(--fuente-titulos);
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 .destacado {
   font-weight: bold;
+  color: var(--color-acento);
 }
 
 #titulo-principal {

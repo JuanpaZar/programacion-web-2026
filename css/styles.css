@@ -12,21 +12,37 @@
 }
 
 body {
-  font-family: var(--fuente-texto);
+  margin: 0;
+  background-color: white;
   color: var(--color-secundario);
+  font-family: var(--fuente-texto);
+}
+
+.encabezado {
+  padding: 25px 20px;
+  border-bottom: 2px solid var(--color-secundario);
+  text-align: center;
 }
 
 h1 {
+  margin: 0;
   color: var(--color-fondo);
   font-family: var(--fuente-titulos);
   font-size: 4rem;
   font-weight: 700;
-  text-align: center;
+}
+
+.encabezado__descripcion {
+  margin: 5px 0 20px;
 }
 
 h2,
 h3 {
   font-family: var(--fuente-titulos);
+}
+
+h2 {
+  font-size: 2rem;
 }
 
 p {
@@ -46,41 +62,65 @@ p {
 .menu__lista {
   margin: 0;
   padding: 0;
-  text-align: center;
 }
 
 .menu__item {
   display: inline-block;
-  margin: 8px;
+  margin: 4px;
 }
+
 .menu__enlace {
   display: block;
-  padding: 8px 16px;
+  padding: 7px 12px;
   color: var(--color-secundario);
   text-decoration: none;
-  border: 1px solid var(--color-acento);
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--color-secundario);
 }
 
 .menu__enlace:hover {
-  background-color: var(--color-acento);
-  color: var(--color-fondo);
+  background-color: var(--color-secundario);
+  color: white;
+}
+
+.presentacion {
+  padding: 45px 20px;
+  text-align: center;
+}
+
+.presentacion__imagen {
+  display: block;
+  width: 700px;
+  max-width: 100%;
+  height: auto;
+  margin: 20px auto;
+}
+
+.presentacion__texto {
+  width: 700px;
+  max-width: 100%;
+  margin: 20px auto;
+}
+
+.articulos {
+  padding: 30px 20px;
+  text-align: center;
 }
 
 .articulos__tarjeta {
   display: inline-block;
   width: 300px;
-  height: 520px;
-  max-width: 100%;
+  height: 500px;
   margin: 12px;
   padding: 16px;
   background-color: var(--color-secundario);
   color: var(--color-texto);
   border: 1px solid var(--color-acento);
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   vertical-align: top;
+  text-align: left;
+}
+
+.articulos__tarjeta:hover {
+  border-color: var(--color-acento);
 }
 
 .articulos__imagen {
@@ -88,7 +128,6 @@ p {
   width: 100%;
   height: 200px;
   margin-bottom: 12px;
-  border-radius: 8px;
 }
 
 .articulos__titulo {
@@ -111,4 +150,23 @@ p {
   content: "●";
   margin-right: 8px;
   font-size: 60%;
+}
+
+.suscripcion {
+  width: 80%;
+  margin: 40px auto;
+  padding: 25px 20px;
+  border-top: 2px solid var(--color-secundario);
+  text-align: left;
+}
+
+.suscripcion p {
+  margin: 8px 0;
+}
+
+.pie {
+  padding: 25px 20px;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  text-align: center;
 }

@@ -53,12 +53,19 @@
 
 <body>
 
-  <header>
+  <header class="encabezado">
+
     <h1 id="titulo-principal">NODO</h1>
-    <p>Querer ser un poco mas consciente</p>
+
+    <p class="encabezado__descripcion">
+      Querer ser un poco mas consciente
+    </p>
 
     <nav class="menu">
       <ul class="menu__lista">
+        <li class="menu__item">
+          <a class="menu__enlace" href="index.html">Inicio</a>
+        </li>
         <li class="menu__item">
           <a class="menu__enlace" href="pages/articulos.html">Artículos</a>
         </li>
@@ -82,19 +89,21 @@
     </nav>
   </header>
 
-  <hr>
   <main>
-    <section>
-      <p class="destacado">BLOG </p>
+
+    <section class="presentacion">
+
+      <p class="destacado">BLOG</p>
 
       <h2>La pandemia de la soledad.</h2>
       <img
+        class="presentacion__imagen"
         src="assets/img/portada-soledad.jpg"
         alt="Personas utilizando sus teléfonos en un espacio público"
         width="700"
         height="350">
 
-      <p>
+      <p class="presentacion__texto">
         Vivimos hiperconectados, pero cada vez más aislados.
         Un espacio para pensar los vínculos, las redes sociales
         y las condiciones que moldean nuestra vida.
@@ -110,11 +119,14 @@
     <hr>
 
     <section class="articulos">
+      <p class="destacado">NUEVO EN NODO</p>
       <h2>Artículos recientes</h2>
 
       <article class="articulos__tarjeta">
 
-        <p class="articulos__categoria"><strong>SOLEDAD</strong></p>
+        <p class="articulos__categoria">
+          <strong>SOLEDAD</strong>
+        </p>
 
         <img
           class="articulos__imagen"
@@ -131,12 +143,18 @@
         <p>
           Conectados como nunca pero desde el mundo virtual.
         </p>
-        <small>30 Agosto 2026 | 8 min de lectura</small>
+
+        <small>
+          30 Agosto 2026 | 8 min de lectura
+        </small>
+
       </article>
 
       <article class="articulos__tarjeta">
 
-        <p class="articulos__categoria"><strong>ALGORITMOS</strong></p>
+        <p class="articulos__categoria">
+          <strong>ALGORITMOS</strong>
+        </p>
 
         <img
           class="articulos__imagen"
@@ -153,12 +171,18 @@
         <p>
           Cuestiona el origen de tus ideas, de dónde vienen.
         </p>
-        <small>30 Agosto 2026 | 9 min de lectura</small>
+
+        <small>
+          30 Agosto 2026 | 9 min de lectura
+        </small>
+
       </article>
 
       <article class="articulos__tarjeta">
 
-        <p class="articulos__categoria"><strong>REDES SOCIALES</strong></p>
+        <p class="articulos__categoria">
+          <strong>REDES SOCIALES</strong>
+        </p>
 
         <img
           class="articulos__imagen"
@@ -175,12 +199,18 @@
         <p>
           Reorganizan nuestro deseo.
         </p>
-        <small>30 Agosto 2026 | 8 min de lectura</small>
+
+        <small>
+          30 Agosto 2026 | 8 min de lectura
+        </small>
+
       </article>
 
       <article class="articulos__tarjeta">
 
-        <p class="articulos__categoria"><strong>MATERIALISMO</strong></p>
+        <p class="articulos__categoria">
+          <strong>MATERIALISMO</strong>
+        </p>
 
         <img
           class="articulos__imagen"
@@ -197,13 +227,21 @@
         <p>
           Economía mundial.
         </p>
-        <small>30 Agosto 2026 | 10 min de lectura</small>
+
+        <small>
+          30 Agosto 2026 | 10 min de lectura
+        </small>
+
       </article>
 
     </section>
 
     <hr>
-    <section>
+
+    <section class="suscripcion">
+
+      <p class="destacado">NODO</p>
+
       <h2>No te pierdas nuevas ideas</h2>
       <p>
         Suscríbete para saber de los últimos artículos.
@@ -217,9 +255,17 @@
   </main>
 
   <hr>
-  <footer>
-    <p><strong>NODO 1</strong></p>
-    <small>© Derechos reservados.</small>
+
+  <footer class="pie">
+
+    <p>
+      <strong>NODO 1</strong>
+    </p>
+
+    <small>
+      © Derechos reservados.
+    </small>
+
   </footer>
 
 </body>

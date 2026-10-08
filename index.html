@@ -56,13 +56,28 @@
   <header>
     <h1 id="titulo-principal">NODO</h1>
     <p>Querer ser un poco mas consciente</p>
-    <nav>
-      <ul>
-        <li><a href="pages/articulos.html">Artículos</a></li>
-        <li><a href="pages/temas.html">Temas</a></li>
-        <li><a href="pages/sobre-mi.html">Sobre mí</a></li>
-        <li><a href="pages/contacto.html">Contacto</a></li>
-        <li><a href="pages/registro.html">Registro</a></li>
+
+    <nav class="menu">
+      <ul class="menu__lista">
+        <li class="menu__item">
+          <a class="menu__enlace" href="pages/articulos.html">Artículos</a>
+        </li>
+
+        <li class="menu__item">
+          <a class="menu__enlace" href="pages/temas.html">Temas</a>
+        </li>
+
+        <li class="menu__item">
+          <a class="menu__enlace" href="pages/sobre-mi.html">Sobre mí</a>
+        </li>
+
+        <li class="menu__item">
+          <a class="menu__enlace" href="pages/contacto.html">Contacto</a>
+        </li>
+
+        <li class="menu__item">
+          <a class="menu__enlace" href="pages/registro.html">Registro</a>
+        </li>
       </ul>
     </nav>
   </header>
@@ -93,73 +108,92 @@
     </section>
 
     <hr>
-    <section>
+
+    <section class="articulos">
       <h2>Artículos recientes</h2>
 
-      <article class="card">
+      <article class="articulos__tarjeta">
 
-        <p class="categoria"><strong>SOLEDAD</strong></p>
+        <p class="articulos__categoria"><strong>SOLEDAD</strong></p>
+
         <img
-          class="card-imagen"
+          class="articulos__imagen"
           src="assets/img/soledad.jpg"
           alt="Persona sola en un momento de reflexión"
           width="300"
           height="200"
           loading="lazy">
-        <h3>La pandemia de la soledad.</h3>
+
+        <h3 class="articulos__titulo">
+          La pandemia de la soledad.
+        </h3>
+
         <p>
           Conectados como nunca pero desde el mundo virtual.
         </p>
         <small>30 Agosto 2026 | 8 min de lectura</small>
       </article>
 
-      <article class="card">
+      <article class="articulos__tarjeta">
 
-        <p class="categoria"><strong>ALGORITMOS</strong></p>
+        <p class="articulos__categoria"><strong>ALGORITMOS</strong></p>
 
         <img
-          class="card-imagen"
+          class="articulos__imagen"
           src="assets/img/algoritmos.jpg"
           alt="Marioneta controlada mediante hilos"
           width="300"
           height="200"
           loading="lazy">
-        <h3>No son tus ideas</h3>
+
+        <h3 class="articulos__titulo">
+          No son tus ideas
+        </h3>
+
         <p>
           Cuestiona el origen de tus ideas, de dónde vienen.
         </p>
         <small>30 Agosto 2026 | 9 min de lectura</small>
       </article>
 
-      <article class="card">
+      <article class="articulos__tarjeta">
 
-        <p class="categoria"><strong>REDES SOCIALES</strong></p>
+        <p class="articulos__categoria"><strong>REDES SOCIALES</strong></p>
+
         <img
-          class="card-imagen"
+          class="articulos__imagen"
           src="assets/img/redes-sociales.jpg"
           alt="Persona absorta utilizando su teléfono"
           width="300"
           height="200"
           loading="lazy">
-        <h3>Scroll infinito, vacío real</h3>
+
+        <h3 class="articulos__titulo">
+          Scroll infinito, vacío real
+        </h3>
+
         <p>
           Reorganizan nuestro deseo.
         </p>
         <small>30 Agosto 2026 | 8 min de lectura</small>
       </article>
 
-      <article class="card">
+      <article class="articulos__tarjeta">
 
-        <p class="categoria"><strong>MATERIALISMO</strong></p>
+        <p class="articulos__categoria"><strong>MATERIALISMO</strong></p>
 
         <img
-          class="card-imagen"
+          class="articulos__imagen"
           src="assets/img/materialismo.jpg"
           alt="Escena relacionada con desigualdad y explotación social"
           width="300"
           height="200"
           loading="lazy">
-        <h3>Modelos políticos</h3>
+
+        <h3 class="articulos__titulo">
+          Modelos políticos
+        </h3>
+
         <p>
           Economía mundial.
         </p>

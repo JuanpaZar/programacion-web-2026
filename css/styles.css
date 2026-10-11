@@ -18,10 +18,34 @@ body {
   font-family: var(--fuente-texto);
 }
 
+.layout {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+}
+
 .encabezado {
+  grid-area: header;
   padding: 25px 20px;
   border-bottom: 2px solid var(--color-secundario);
   text-align: center;
+}
+
+.menu {
+  grid-area: sidebar;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  padding: 25px 20px;
+  background-color: #f5f5f5;
+}
+
+.contenido {
+  grid-area: main;
 }
 
 h1 {
@@ -59,14 +83,18 @@ p {
   text-align: center;
 }
 
-.menu__lista {
-  margin: 0;
-  padding: 0;
+.menu__titulo {
+  font-size: 1rem;
+  margin-top: 0;
 }
 
-.menu__item {
-  display: inline-block;
-  margin: 4px;
+.menu__lista {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .menu__enlace {
@@ -106,16 +134,21 @@ p {
   text-align: center;
 }
 
+.articulos__lista {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
 .articulos__tarjeta {
-  display: inline-block;
-  width: 300px;
+  flex: 1 1 220px;
+  max-width: 300px;
   height: 500px;
-  margin: 12px;
   padding: 16px;
   background-color: var(--color-secundario);
   color: var(--color-texto);
   border: 1px solid var(--color-acento);
-  vertical-align: top;
   text-align: left;
 }
 
@@ -165,6 +198,7 @@ p {
 }
 
 .pie {
+  grid-area: footer;
   padding: 25px 20px;
   background-color: var(--color-fondo);
   color: var(--color-texto);

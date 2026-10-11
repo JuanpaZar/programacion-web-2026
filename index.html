@@ -51,7 +51,7 @@
     content="https://juanpazar.github.io/programacion-web-2026/assets/img/portada-soledad.jpg">
 </head>
 
-<body>
+<body class="layout">
 
   <header class="encabezado">
 
@@ -61,35 +61,37 @@
       Querer ser un poco mas consciente
     </p>
 
-    <nav class="menu">
-      <ul class="menu__lista">
-        <li class="menu__item">
-          <a class="menu__enlace" href="index.html">Inicio</a>
-        </li>
-        <li class="menu__item">
-          <a class="menu__enlace" href="pages/articulos.html">Artículos</a>
-        </li>
-
-        <li class="menu__item">
-          <a class="menu__enlace" href="pages/temas.html">Temas</a>
-        </li>
-
-        <li class="menu__item">
-          <a class="menu__enlace" href="pages/sobre-mi.html">Sobre mí</a>
-        </li>
-
-        <li class="menu__item">
-          <a class="menu__enlace" href="pages/contacto.html">Contacto</a>
-        </li>
-
-        <li class="menu__item">
-          <a class="menu__enlace" href="pages/registro.html">Registro</a>
-        </li>
-      </ul>
-    </nav>
   </header>
 
-  <main>
+  <nav class="menu">
+    <h2 class="menu__titulo">NAVEGACIÓN</h2>
+    <ul class="menu__lista">
+      <li class="menu__item">
+        <a class="menu__enlace" href="index.html">Inicio</a>
+      </li>
+      <li class="menu__item">
+        <a class="menu__enlace" href="pages/articulos.html">Artículos</a>
+      </li>
+
+      <li class="menu__item">
+        <a class="menu__enlace" href="pages/temas.html">Temas</a>
+      </li>
+
+      <li class="menu__item">
+        <a class="menu__enlace" href="pages/sobre-mi.html">Sobre mí</a>
+      </li>
+
+      <li class="menu__item">
+        <a class="menu__enlace" href="pages/contacto.html">Contacto</a>
+      </li>
+
+      <li class="menu__item">
+        <a class="menu__enlace" href="pages/registro.html">Registro</a>
+      </li>
+    </ul>
+  </nav>
+
+  <main class="contenido">
 
     <section class="presentacion">
 
@@ -121,7 +123,7 @@
     <section class="articulos">
       <p class="destacado">NUEVO EN NODO</p>
       <h2>Artículos recientes</h2>
-
+      <div class="articulos__lista">
       <article class="articulos__tarjeta">
 
         <p class="articulos__categoria">
@@ -234,6 +236,8 @@
 
       </article>
 
+      </div>
+
     </section>
 
     <hr>
@@ -251,10 +255,8 @@
         <strong>Suscribirme</strong>
       </p>
     </section>
-
+<hr>
   </main>
-
-  <hr>
 
   <footer class="pie">
 

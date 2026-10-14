@@ -8,141 +8,156 @@
   --espaciado: 16px;
   --espaciado-s: calc(var(--espaciado) / 2);
   --espaciado-l: calc(var(--espaciado) * 1.5);
-  --espaciado-xl: calc(var(--espaciado) * 2);
-  --radio-borde: 8px;
-  --ancho-menu: 200px;
-  --tam-titulo: 2.5rem;
-  --alto-imagen: 180px;
+  --radio-borde: 6px;
+  --ancho-contenedor: 1200px;
 }
+
 * {
   box-sizing: border-box;
 }
+
 body {
   margin: 0;
   background-color: white;
   color: var(--color-secundario);
   font-family: var(--fuente-texto);
 }
+
 .layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   grid-template-areas:
     "header"
-    "sidebar"
+    "nav"
     "main"
     "footer";
 }
+
 .encabezado {
   grid-area: header;
-  padding: var(--espaciado-l) var(--espaciado);
+  padding: 25px var(--espaciado);
   border-bottom: 2px solid var(--color-secundario);
   text-align: center;
 }
+
 .menu {
-  grid-area: sidebar;
+  grid-area: nav;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: stretch;
-  padding: var(--espaciado);
-  background-color: #f5f5f5;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: var(--espaciado-s);
+  background-color: white;
+  border-bottom: 1px solid var(--color-secundario);
 }
+
 .contenido {
   grid-area: main;
-  min-width: 0;
+  width: 100%;
+  max-width: var(--ancho-contenedor);
+  margin: 0 auto;
 }
+
 h1 {
   margin: 0;
   color: var(--color-fondo);
   font-family: var(--fuente-titulos);
-  font-size: var(--tam-titulo);
+  font-size: 4rem;
   font-weight: 700;
 }
+
 .encabezado__descripcion {
-  margin: var(--espaciado-s) 0 var(--espaciado);
+  margin: 5px 0 20px;
 }
+
 h2,
 h3 {
   font-family: var(--fuente-titulos);
 }
+
 h2 {
-  font-size: 1.75rem;
+  font-size: 2rem;
 }
+
 p {
   font-size: 1rem;
   line-height: 1.6;
 }
+
 .destacado {
   font-weight: bold;
   color: var(--color-acento);
 }
+
 #titulo-principal {
   text-align: center;
 }
-.menu__titulo {
-  font-size: 1rem;
-  margin: 0 0 var(--espaciado-s);
-  text-align: center;
-}
+
 .menu__lista {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   gap: var(--espaciado-s);
   margin: 0;
   padding: 0;
   list-style: none;
 }
-.menu__item {
-  flex: 1 1 100px;
-}
+
 .menu__enlace {
   display: block;
-  padding: 8px 10px;
+  padding: 8px 12px;
   color: var(--color-secundario);
   text-decoration: none;
-  text-align: center;
   border: 1px solid var(--color-secundario);
   border-radius: var(--radio-borde);
 }
+
 .menu__enlace:hover {
   background-color: var(--color-secundario);
   color: white;
 }
+
 .presentacion {
-  padding: var(--espaciado-xl) var(--espaciado);
+  padding: 45px var(--espaciado);
   text-align: center;
 }
+
 .presentacion__imagen {
   display: block;
   width: 700px;
   max-width: 100%;
   height: auto;
-  margin: var(--espaciado-l) auto;
+  margin: 20px auto;
 }
+
 .presentacion__texto {
   width: 700px;
   max-width: 100%;
-  margin: var(--espaciado-l) auto;
+  margin: 20px auto;
 }
+
 .articulos {
-  padding: var(--espaciado-l) var(--espaciado);
+  padding: 30px var(--espaciado);
   text-align: center;
 }
+
 .articulos__lista {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: stretch;
-  gap: var(--espaciado);
+  gap: var(--espaciado-l);
+  margin-top: var(--espaciado-l);
 }
 .articulos__tarjeta {
   display: flex;
   flex-direction: column;
   flex: 1 1 220px;
   max-width: 300px;
-  min-height: 480px;
+  min-width: 0;
   padding: var(--espaciado);
   background-color: var(--color-secundario);
   color: var(--color-texto);
@@ -156,8 +171,8 @@ p {
 .articulos__imagen {
   display: block;
   width: 100%;
-  height: var(--alto-imagen);
-  margin-bottom: var(--espaciado-s);
+  height: 200px;
+  margin-bottom: 12px;
   object-fit: cover;
   border-radius: var(--radio-borde);
 }
@@ -169,6 +184,7 @@ p {
 }
 .articulos__tarjeta small {
   margin-top: auto;
+  padding-top: var(--espaciado-s);
   color: var(--color-texto);
 }
 .articulos__categoria {
@@ -180,19 +196,19 @@ p {
   font-size: 60%;
 }
 .suscripcion {
-  width: 100%;
-  max-width: 800px;
-  margin: var(--espaciado-xl) auto;
-  padding: var(--espaciado-l) var(--espaciado);
+  width: 90%;
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 25px var(--espaciado);
   border-top: 2px solid var(--color-secundario);
   text-align: left;
 }
 .suscripcion p {
-  margin: var(--espaciado-s) 0;
+  margin: 8px 0;
 }
 .pie {
   grid-area: footer;
-  padding: var(--espaciado-l) var(--espaciado);
+  padding: 25px 20px;
   background-color: var(--color-fondo);
   color: var(--color-texto);
   text-align: center;
@@ -200,41 +216,63 @@ p {
 @media (min-width: 768px) {
   :root {
     --espaciado: 20px;
-    --tam-titulo: 3rem;
-    --alto-imagen: 190px;
   }
-  .layout {
-    grid-template-columns: var(--ancho-menu) minmax(0, 1fr);
-    grid-template-areas:
-      "header header"
-      "sidebar main"
-      "footer footer";
-    gap: 0 var(--espaciado);
+
+  .encabezado {
+    padding: 35px var(--espaciado);
   }
-  .menu__titulo {
-    text-align: left;
-  }
+
   .menu__lista {
-    flex-direction: column;
-    flex-wrap: nowrap;
+    gap: var(--espaciado);
   }
-  .menu__item {
-    flex: initial;
-  }
+
   .menu__enlace {
-    text-align: left;
+    padding: 9px 16px;
+  }
+
+  .articulos__lista {
+    gap: var(--espaciado-l);
+  }
+
+  .articulos__tarjeta {
+    flex: 1 1 280px;
+  }
+
+  .suscripcion {
+    width: 80%;
   }
 }
 @media (min-width: 1024px) {
   :root {
     --espaciado: 24px;
-    --tam-titulo: 3.5rem;
-    --alto-imagen: 200px;
+  }
+
+  .presentacion {
+    padding: 55px var(--espaciado);
+  }
+
+  .articulos__lista {
+    justify-content: space-between;
+  }
+
+  .articulos__tarjeta {
+    flex: 1 1 220px;
   }
 }
 @media (min-width: 1280px) {
   :root {
-    --espaciado: 32px;
-    --tam-titulo: 4rem;
+    --espaciado: 28px;
+  }
+
+  .contenido {
+    padding: 0 var(--espaciado);
+  }
+
+  .articulos__lista {
+    gap: var(--espaciado-l);
+  }
+
+  .articulos__tarjeta {
+    flex: 1 1 220px;
   }
 }

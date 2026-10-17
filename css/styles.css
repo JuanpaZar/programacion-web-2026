@@ -1,105 +1,148 @@
+/* 
+   ÍNDICE */
+
+/*
+1. Variables y configuración general
+2. Estilos generales
+3. Encabezado
+4. Menú de navegación
+5. Presentación principal
+6. Artículos y tarjetas
+7. Botones
+8. Formulario de suscripción
+9. Pie de página
+10. Animaciones
+11. Accesibilidad
+*/
+
+
+/* 
+   1. VARIABLES Y CONFIGURACIÓN GENERAL
+ */
+
 :root {
-  --color-fondo: #2E3440;
+  color-scheme: light dark;
+
+  --color-fondo: #FFFFFF;
   --color-secundario: #3B4252;
-  --color-acento: #88C0D0;
-  --color-texto: #ECEFF4;
-  --fuente-titulos: 'Poppins', sans-serif;
-  --fuente-texto: 'Inter', sans-serif;
-  --espaciado: 16px;
+  --color-acento: #5B9EAF;
+  --color-texto: #2E3440;
+  --color-texto-inverso: #FFFFFF;
+
+  --color-encabezado: #ECEFF4;
+  --color-menu: #F4F6F8;
+
+  --color-boton: #5B9EAF;
+  --color-boton-hover: #3B7F91;
+  --color-texto-boton: #2E3440;
+  --color-texto-boton-hover: #FFFFFF;
+
+  --espaciado: 20px;
   --espaciado-s: calc(var(--espaciado) / 2);
   --espaciado-l: calc(var(--espaciado) * 1.5);
-  --radio-borde: 6px;
+
+  --radio-borde: 8px;
   --ancho-contenedor: 1200px;
 }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-fondo: #2E3440;
+    --color-secundario: #3B4252;
+    --color-acento: #88C0D0;
+    --color-texto: #ECEFF4;
+    --color-texto-inverso: #ECEFF4;
+
+    --color-encabezado: #3B4252;
+    --color-menu: #3B4252;
+
+    --color-boton: #88C0D0;
+    --color-boton-hover: #A5D5E2;
+    --color-texto-boton: #2E3440;
+    --color-texto-boton-hover: #FFFFFF;
+  }
+}
+
+
+/* 
+   2. ESTILOS GENERALES
+ */
 
 * {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  background-color: white;
-  color: var(--color-secundario);
-  font-family: var(--fuente-texto);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  font-family: 'Inter', sans-serif;
 }
 
 .layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  grid-template-areas:
-    "header"
-    "nav"
-    "main"
-    "footer";
+  min-height: 100vh;
 }
 
+.contenido {
+  width: min(100%, var(--ancho-contenedor));
+  margin: 0 auto;
+  padding: var(--espaciado);
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Poppins', sans-serif;
+}
+
+.destacado {
+  color: var(--color-acento);
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+
+/*
+   3. ENCABEZADO
+ */
+
 .encabezado {
-  grid-area: header;
-  padding: 25px var(--espaciado);
-  border-bottom: 2px solid var(--color-secundario);
+  padding: var(--espaciado);
+  background-color: var(--color-encabezado);
+  color: var(--color-texto);
   text-align: center;
 }
 
+.encabezado h1 {
+  font-size: clamp(2rem, 1rem + 4vw, 4rem);
+}
+
+.encabezado__descripcion {
+  font-size: clamp(0.9rem, 0.85rem + 0.4vw, 1.1rem);
+  animation: aparecer 2s ease-in-out both;
+}
+
+
+/* 
+   4. MENÚ DE NAVEGACIÓN
+ */
+
 .menu {
-  grid-area: nav;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: sticky;
   top: 0;
   z-index: 10;
   padding: var(--espaciado-s);
-  background-color: white;
-  border-bottom: 1px solid var(--color-secundario);
-}
-
-.contenido {
-  grid-area: main;
-  width: 100%;
-  max-width: var(--ancho-contenedor);
-  margin: 0 auto;
-}
-
-h1 {
-  margin: 0;
-  color: var(--color-fondo);
-  font-family: var(--fuente-titulos);
-  font-size: 4rem;
-  font-weight: 700;
-}
-
-.encabezado__descripcion {
-  margin: 5px 0 20px;
-}
-
-h2,
-h3 {
-  font-family: var(--fuente-titulos);
-}
-
-h2 {
-  font-size: 2rem;
-}
-
-p {
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-.destacado {
-  font-weight: bold;
-  color: var(--color-acento);
-}
-
-#titulo-principal {
-  text-align: center;
+  background-color: var(--color-menu);
 }
 
 .menu__lista {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
   gap: var(--espaciado-s);
   margin: 0;
   padding: 0;
@@ -109,49 +152,84 @@ p {
 .menu__enlace {
   display: block;
   padding: 8px 12px;
-  color: var(--color-secundario);
+  color: var(--color-texto);
   text-decoration: none;
-  border: 1px solid var(--color-secundario);
+  border: 1px solid var(--color-texto);
   border-radius: var(--radio-borde);
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &:hover {
+    background-color: var(--color-secundario);
+    color: var(--color-texto-inverso);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-acento);
+    outline-offset: 3px;
+  }
 }
 
-.menu__enlace:hover {
-  background-color: var(--color-secundario);
-  color: white;
-}
+
+/* 
+   5. PRESENTACIÓN PRINCIPAL
+ */
 
 .presentacion {
-  padding: 45px var(--espaciado);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--espaciado-s);
+  padding: 45px max(16px, 4vw);
   text-align: center;
+}
+
+.presentacion h2 {
+  margin: 0;
 }
 
 .presentacion__imagen {
   display: block;
-  width: 700px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 700px;
   height: auto;
-  margin: 20px auto;
+  border-radius: var(--radio-borde);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.03);
+  }
 }
 
 .presentacion__texto {
-  width: 700px;
-  max-width: 100%;
-  margin: 20px auto;
+  max-width: 700px;
+  margin: var(--espaciado-s) auto;
+  line-height: 1.7;
 }
 
+.presentacion__enlaces {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--espaciado);
+  margin-top: var(--espaciado-s);
+}
+
+
+/* 
+   6. ARTÍCULOS Y TARJETAS
+ */
+
 .articulos {
-  padding: 30px var(--espaciado);
-  text-align: center;
+  padding: var(--espaciado);
 }
 
 .articulos__lista {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: stretch;
-  gap: var(--espaciado-l);
-  margin-top: var(--espaciado-l);
+  gap: var(--espaciado);
 }
+
 .articulos__tarjeta {
   display: flex;
   flex-direction: column;
@@ -160,119 +238,147 @@ p {
   min-width: 0;
   padding: var(--espaciado);
   background-color: var(--color-secundario);
-  color: var(--color-texto);
+  color: var(--color-texto-inverso);
   border: 1px solid var(--color-acento);
   border-radius: var(--radio-borde);
   text-align: left;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    border-color: var(--color-acento);
+    transform: translateY(-5px);
+  }
+
+  p {
+    color: var(--color-texto-inverso);
+  }
+
+  small {
+    margin-top: auto;
+    padding-top: var(--espaciado-s);
+    color: var(--color-texto-inverso);
+  }
 }
-.articulos__tarjeta:hover {
-  border-color: var(--color-acento);
-}
+
 .articulos__imagen {
-  display: block;
   width: 100%;
-  height: 200px;
-  margin-bottom: 12px;
-  object-fit: cover;
+  height: auto;
   border-radius: var(--radio-borde);
 }
+
 .articulos__titulo {
-  color: var(--color-texto);
+  margin-bottom: var(--espaciado-s);
 }
-.articulos__tarjeta p {
-  color: var(--color-texto);
+
+.articulos__tarjeta .articulos__categoria {
+  color: var(--color-acento);
 }
-.articulos__tarjeta small {
-  margin-top: auto;
-  padding-top: var(--espaciado-s);
-  color: var(--color-texto);
-}
-.articulos__categoria {
-  color: var(--color-acento) !important;
-}
+
 .articulos__categoria::before {
-  content: "●";
-  margin-right: 8px;
-  font-size: 60%;
+  content: "▲";
+  display: inline-block;
+  margin-right: 5px;
+  transform: rotate(20deg);
 }
+
+
+/*
+   7. BOTONES */
+
+.boton {
+  display: inline-block;
+  padding: 10px 18px;
+  background-color: var(--color-boton);
+  color: var(--color-texto-boton);
+  text-decoration: none;
+  border: none;
+  border-radius: var(--radio-borde);
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    background-color: var(--color-boton-hover);
+    color: var(--color-texto-boton-hover);
+    transform: translateY(-3px);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-acento);
+    outline-offset: 3px;
+  }
+}
+
+
+/* 
+   8. FORMULARIO DE SUSCRIPCIÓN */
+
 .suscripcion {
-  width: 90%;
-  max-width: 700px;
-  margin: 40px auto;
-  padding: 25px var(--espaciado);
-  border-top: 2px solid var(--color-secundario);
-  text-align: left;
+  width: min(90%, 700px);
+  margin: var(--espaciado-l) auto;
+  padding: var(--espaciado);
+  border: 1px solid var(--color-acento);
+  border-radius: var(--radio-borde);
 }
-.suscripcion p {
-  margin: 8px 0;
+
+.suscripcion input {
+  max-width: 100%;
+  padding: 10px;
+  border: 1px solid var(--color-secundario);
+  border-radius: var(--radio-borde);
 }
+
+@media (min-width: 768px) {
+  .suscripcion {
+    width: min(80%, 700px);
+  }
+}
+
+
+/* 
+   9. PIE DE PÁGINA
+ */
+
 .pie {
-  grid-area: footer;
-  padding: 25px 20px;
-  background-color: var(--color-fondo);
-  color: var(--color-texto);
+  padding: var(--espaciado);
+  background-color: var(--color-secundario);
+  color: var(--color-texto-inverso);
   text-align: center;
 }
-@media (min-width: 768px) {
-  :root {
-    --espaciado: 20px;
+
+
+/* 
+10. ANIMACIONES
+ */
+
+@keyframes aparecer {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
   }
 
-  .encabezado {
-    padding: 35px var(--espaciado);
+  50% {
+    opacity: 0.5;
+    transform: translateY(10px);
   }
 
-  .menu__lista {
-    gap: var(--espaciado);
-  }
-
-  .menu__enlace {
-    padding: 9px 16px;
-  }
-
-  .articulos__lista {
-    gap: var(--espaciado-l);
-  }
-
-  .articulos__tarjeta {
-    flex: 1 1 280px;
-  }
-
-  .suscripcion {
-    width: 80%;
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
-@media (min-width: 1024px) {
-  :root {
-    --espaciado: 24px;
+/* 
+   11. ACCESIBILIDAD*/
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 
-  .presentacion {
-    padding: 55px var(--espaciado);
-  }
-
-  .articulos__lista {
-    justify-content: space-between;
-  }
-
-  .articulos__tarjeta {
-    flex: 1 1 220px;
-  }
-}
-@media (min-width: 1280px) {
-  :root {
-    --espaciado: 28px;
-  }
-
-  .contenido {
-    padding: 0 var(--espaciado);
-  }
-
-  .articulos__lista {
-    gap: var(--espaciado-l);
-  }
-
-  .articulos__tarjeta {
-    flex: 1 1 220px;
+  html {
+    scroll-behavior: auto;
   }
 }

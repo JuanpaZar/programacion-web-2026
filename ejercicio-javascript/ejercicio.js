@@ -20,8 +20,8 @@ let altura = Number(prompt("Ingresa tu altura en metros:"));
 if (peso > 0 && altura > 0) {
     let imc = calcularIMC(peso, altura);
 
-    console.log("Tu IMC es: " + imc.toFixed(2));
-    console.log("Clasificacion: " + clasificarIMC(imc));
+    console.log(`Tu IMC es: ${imc.toFixed(2)}`);
+    console.log(`Clasificacion: ${clasificarIMC(imc)}`);
 } else {
     console.log("Error: el peso y la altura deben ser mayores que 0");
 }
@@ -49,7 +49,5 @@ function fizzBuzz(n) {
 
 let  numero = Number(prompt("Ingresa un numero para FizzBuzz:"));
 fizzBuzz(numero);
-
-
 
 

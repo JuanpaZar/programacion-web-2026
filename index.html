@@ -29,35 +29,47 @@
   <meta name="twitter:image" content="https://juanpazar.github.io/programacion-web-2026/assets/img/portada-soledad.jpg">
 </head>
 
-<body class="layout">
+<body class="layout tema-oscuro">
 
   <header class="encabezado">
+
+    <nav class="menu">
+
+      <button type="button" class="menu__boton boton-interactivo" id="boton-menu" aria-expanded="false" aria-controls="lista-menu">
+        ☰ Menú
+      </button>
+
+      <ul class="menu__lista" id="lista-menu">
+        <li class="menu__item">
+          <a class="menu__enlace" href="index.html">Inicio</a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__enlace" href="pages/articulos.html">Artículos</a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__enlace" href="pages/temas.html">Temas</a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__enlace" href="pages/sobre-mi.html">Sobre mí</a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__enlace" href="pages/contacto.html">Contacto</a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__enlace" href="pages/registro.html">Registro</a>
+        </li>
+        <li class="menu__item">
+          <button type="button" class="tema__boton boton-interactivo" id="boton-tema" aria-pressed="true">
+            Modo
+          </button>
+        </li>
+      </ul>
+
+    </nav>
+
     <h1 id="titulo-principal">NODO</h1>
     <p class="encabezado__descripcion">Querer ser un poco mas consciente</p>
   </header>
-
-  <nav class="menu">
-    <ul class="menu__lista">
-      <li class="menu__item">
-        <a class="menu__enlace" href="index.html">Inicio</a>
-      </li>
-      <li class="menu__item">
-        <a class="menu__enlace" href="pages/articulos.html">Artículos</a>
-      </li>
-      <li class="menu__item">
-        <a class="menu__enlace" href="pages/temas.html">Temas</a>
-      </li>
-      <li class="menu__item">
-        <a class="menu__enlace" href="pages/sobre-mi.html">Sobre mí</a>
-      </li>
-      <li class="menu__item">
-        <a class="menu__enlace" href="pages/contacto.html">Contacto</a>
-      </li>
-      <li class="menu__item">
-        <a class="menu__enlace" href="pages/registro.html">Registro</a>
-      </li>
-    </ul>
-  </nav>
 
   <main class="contenido">
 
@@ -84,6 +96,10 @@
     <section class="articulos">
       <p class="destacado">NUEVO EN NODO</p>
       <h2>Artículos recientes</h2>
+
+      <div class="buscador">
+        <input type="search" id="buscador-articulos" placeholder="Buscar artículos..." aria-label="Buscar artículos">
+      </div>
 
       <div class="articulos__lista">
 
@@ -149,6 +165,39 @@
     <p><strong>NODO 1</strong></p>
     <small>© Derechos reservados.</small>
   </footer>
+
+  <script>
+
+    const botonMenu = document.getElementById("boton-menu");
+    const menu = document.querySelector(".menu");
+
+    botonMenu.addEventListener("click", function () {
+      const abierto = menu.classList.toggle("menu--abierto");
+      botonMenu.setAttribute("aria-expanded", String(abierto));
+    });
+
+    const botonTema = document.getElementById("boton-tema");
+
+    botonTema.addEventListener("click", function () {
+      const modoOscuro = document.body.classList.toggle("tema-oscuro");
+
+      document.body.classList.toggle("tema-claro", !modoOscuro);
+      botonTema.setAttribute("aria-pressed", String(modoOscuro));
+    });
+
+
+    const buscador = document.getElementById("buscador-articulos");
+    const tarjetas = document.querySelectorAll(".articulos__tarjeta");
+
+    buscador.addEventListener("input", function () {
+      const texto = buscador.value.trim().toLowerCase();
+
+      tarjetas.forEach(function (tarjeta) {
+        const contenido = tarjeta.textContent.toLowerCase();
+        tarjeta.classList.toggle("oculto", !contenido.includes(texto));
+      });
+    });
+  </script>
 
 </body>
 

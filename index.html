@@ -166,38 +166,7 @@
     <small>© Derechos reservados.</small>
   </footer>
 
-  <script>
-
-    const botonMenu = document.getElementById("boton-menu");
-    const menu = document.querySelector(".menu");
-
-    botonMenu.addEventListener("click", function () {
-      const abierto = menu.classList.toggle("menu--abierto");
-      botonMenu.setAttribute("aria-expanded", String(abierto));
-    });
-
-    const botonTema = document.getElementById("boton-tema");
-
-    botonTema.addEventListener("click", function () {
-      const modoOscuro = document.body.classList.toggle("tema-oscuro");
-
-      document.body.classList.toggle("tema-claro", !modoOscuro);
-      botonTema.setAttribute("aria-pressed", String(modoOscuro));
-    });
-
-
-    const buscador = document.getElementById("buscador-articulos");
-    const tarjetas = document.querySelectorAll(".articulos__tarjeta");
-
-    buscador.addEventListener("input", function () {
-      const texto = buscador.value.trim().toLowerCase();
-
-      tarjetas.forEach(function (tarjeta) {
-        const contenido = tarjeta.textContent.toLowerCase();
-        tarjeta.classList.toggle("oculto", !contenido.includes(texto));
-      });
-    });
-  </script>
+  <script type="module" src="assets/js/main.js"></script>
 
 </body>
 

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -5,16 +6,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registro | NODO</title>
+  <link rel="stylesheet" href="../css/styles.css">
 </head>
 
-<body>
+<body class="layout tema-oscuro">
   <header>
     <h1>Crear cuenta</h1>
     <p>Registrate</p>
   </header>
 
   <main>
-    <form action="" method="GET">
+    <form action="" method="GET" id="form-registro" novalidate>
 
       <fieldset>
         <legend>Datos de registro</legend>
@@ -28,6 +30,7 @@
             required
             minlength="2"
             maxlength="40">
+          <span class="error-campo" data-error-para="nombre"></span>
         </div>
         <br>
 
@@ -39,6 +42,7 @@
             name="correo"
             placeholder="ejemplo@correo.com"
             required>
+          <span class="error-campo" data-error-para="correo"></span>
         </div>
         <br>
 
@@ -51,6 +55,7 @@
             placeholder="Crea una contraseña"
             required
             minlength="6">
+          <span class="error-campo" data-error-para="contrasena"></span>
         </div>
         <br>
 
@@ -110,7 +115,13 @@
          <button type="submit">Crear cuenta</button>
       </div>
 
+      <p id="mensaje-registro"></p>
+
     </form>
+
+    <p style="text-align: center;">
+      <a class="boton" href="../index.html">Volver al inicio</a>
+    </p>
 
   </main>
 
@@ -118,6 +129,8 @@
     <p><strong>NODO 1</strong></p>
     <small>© Derechos reservados.</small>
   </footer>
+
+  <script type="module" src="../assets/js/main.js"></script>
 
 </body>
 

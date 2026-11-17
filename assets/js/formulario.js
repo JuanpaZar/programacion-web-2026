@@ -1,5 +1,5 @@
-
 import { validarRegistro } from "./validaciones.js";
+import Swal from "../vendor/sweetalert2.esm.all.js";
 
 export function iniciarFormulario() {
     const formulario = document.getElementById("form-registro");
@@ -40,7 +40,12 @@ export function iniciarFormulario() {
             return;
         }
 
-        mensaje.textContent = "Cuenta creada.";
+        Swal.fire({
+            icon: "success",
+            title: "Cuenta creada.",
+            confirmButtonText: "Aceptar"
+        });
+
         formulario.reset();
     });
 

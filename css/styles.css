@@ -1,4 +1,3 @@
-
 /* 
    ÍNDICE */
 
@@ -524,7 +523,7 @@ body.tema-oscuro {
 
 
 /*
-   13. FORMULARIO 
+   13. FORMULARIO DE REGISTRO
  */
 
 #form-registro {
@@ -576,4 +575,163 @@ body.tema-oscuro {
 
 #mensaje-registro {
   color: var(--color-acento);
+}
+
+
+/*
+   14. PÁGINA DE ARTÍCULOS
+ */
+
+.archivo {
+  padding: var(--espaciado);
+}
+
+.archivo > h2 {
+  margin-bottom: var(--espaciado-s);
+}
+
+.archivo > p {
+  line-height: 1.7;
+}
+
+.articulos__tarjeta .boton {
+  align-self: flex-start;
+  margin-top: var(--espaciado-s);
+}
+
+.articulos__imagen-texto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 160px;
+  padding: var(--espaciado-s);
+  background-color: #2E3440;
+  border: 1px solid var(--color-acento);
+  border-radius: var(--radio-borde);
+  color: #88C0D0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.articulos__ver-todos {
+  margin-top: var(--espaciado-l);
+  text-align: center;
+}
+
+
+/*
+   15. LECTURA DE ARTÍCULOS
+ */
+
+.lectura {
+  width: min(100%, 760px);
+  margin: 30px auto 60px;
+  padding: var(--espaciado);
+}
+
+.lectura h2 {
+  margin-top: 0;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+}
+
+.lectura h3 {
+  margin-top: 35px;
+  color: var(--color-acento);
+}
+
+.lectura p {
+  line-height: 1.9;
+  margin-bottom: 22px;
+}
+
+.lectura__autor {
+  color: var(--color-acento);
+  font-size: 0.9rem;
+}
+
+.lectura__imagen {
+  display: block;
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  margin: 25px 0 35px;
+  border-radius: var(--radio-borde);
+}
+
+.lectura__portada {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 270px;
+  margin: 25px 0 35px;
+  padding: var(--espaciado);
+  background-color: var(--color-secundario);
+  color: var(--color-acento);
+  border: 1px solid var(--color-acento);
+  border-radius: var(--radio-borde);
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  letter-spacing: 3px;
+  text-align: center;
+}
+
+.lectura .boton {
+  margin-top: var(--espaciado);
+}
+
+
+/*
+   16. SUGERENCIAS
+ */
+
+.sugerencias {
+  width: min(100%, 700px);
+  margin: 40px auto;
+  padding: var(--espaciado);
+  border: 1px solid var(--color-acento);
+  border-radius: var(--radio-borde);
+}
+
+.sugerencias p {
+  line-height: 1.7;
+}
+
+.sugerencias form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--espaciado-s);
+  margin: var(--espaciado);
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.sugerencias textarea {
+  width: 100%;
+  min-height: 110px;
+  padding: 12px;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  border: 1px solid var(--color-acento);
+  border-radius: var(--radio-borde);
+  font-family: 'Inter', sans-serif;
+  resize: vertical;
+}
+
+.sugerencias button {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+}
+
+#mensaje-sugerencia {
+  color: var(--color-acento);
+  margin: 0;
+}
+
+.sugerencias small {
+  color: var(--color-texto);
+  opacity: 0.8;
 }

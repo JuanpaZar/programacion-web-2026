@@ -5,10 +5,61 @@
   <title>Artículos | NODO</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/styles.css">
 </head>
 
-<body>
-  <h1>Artículos</h1>
+<body class="layout tema-oscuro">
+
+  <header class="encabezado">
+    <h1>Artículos</h1>
+    <p class="encabezado__descripcion">Ideas para cuestionar lo cotidiano.</p>
+    <a class="boton" href="../index.html">Volver al inicio</a>
+  </header>
+
+  <main class="contenido">
+
+    <section class="archivo">
+      <p class="destacado">NODO</p>
+      <h2>Todos los artículos</h2>
+      <p>Opiniones sobre cosas que vivimos, normalizamos y pocas veces cuestionamos.</p>
+
+      <div class="buscador">
+        <input type="search" id="buscador-articulos" placeholder="Buscar artículos..." aria-label="Buscar artículos">
+      </div>
+
+      <p id="estado-articulos" role="status" aria-live="polite">Cargando artículos...</p>
+
+      <div class="articulos__lista" id="lista-articulos">
+
+      </div>
+    </section>
+
+    <hr>
+
+    <section class="sugerencias">
+      <p class="destacado">PARTICIPA</p>
+      <h2>¿Sobre qué te gustaría leer?</h2>
+      <p>Si tienes algún tema que te gustaría ver en NODO, puedes proponerlo.</p>
+
+      <form id="form-sugerencias">
+        <label for="sugerencia-tema">Tu idea:</label>
+        <textarea id="sugerencia-tema" name="sugerencia" placeholder="Escribe el tema que te gustaría ver..." required></textarea>
+        <button class="boton" type="submit">Copiar sugerencia</button>
+        <p id="mensaje-sugerencia"></p>
+      </form>
+
+      <small>Por ahora puedes copiar tu propuesta. Todavía no hay un sistema para enviarla directamente al blog.</small>
+    </section>
+
+  </main>
+
+  <footer class="pie">
+    <p><strong>NODO 1</strong></p>
+    <small>© Derechos reservados.</small>
+  </footer>
+
+  <script type="module" src="../assets/js/main.js"></script>
+
 </body>
 
 </html>

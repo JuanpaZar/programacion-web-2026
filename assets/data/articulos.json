@@ -1,0 +1,60 @@
+[
+  {
+    "id": 1,
+    "categoria": "SOLEDAD",
+    "titulo": "La pandemia de la soledad.",
+    "descripcion": "Conectados como nunca pero desde el mundo virtual.",
+    "autor": "Juan Pablo Zamora Romero",
+    "imagen": "../assets/img/soledad.jpg",
+    "alt": "Persona sola en un momento de reflexión",
+    "enlace": "../articulos/pandemia-soledad.html"
+  },
+  {
+    "id": 2,
+    "categoria": "ALGORITMOS",
+    "titulo": "No son tus ideas",
+    "descripcion": "Cuestiona el origen de tus ideas, de dónde vienen.",
+    "autor": "Juan Pablo Zamora Romero",
+    "imagen": "../assets/img/algoritmos.jpg",
+    "alt": "Marioneta controlada mediante hilos",
+    "enlace": "../articulos/no-son-tus-ideas.html"
+  },
+  {
+    "id": 3,
+    "categoria": "REDES SOCIALES",
+    "titulo": "Scroll infinito, vacío real",
+    "descripcion": "Reorganizan nuestro deseo.",
+    "autor": "Juan Pablo Zamora Romero",
+    "imagen": "../assets/img/redes-sociales.jpg",
+    "alt": "Persona absorta utilizando su teléfono",
+    "enlace": "../articulos/scroll-infinito.html"
+  },
+  {
+    "id": 4,
+    "categoria": "MATERIALISMO",
+    "titulo": "Modelos políticos",
+    "descripcion": "Economía mundial.",
+    "autor": "Juan Pablo Zamora Romero",
+    "imagen": "../assets/img/materialismo.jpg",
+    "alt": "Escena relacionada con desigualdad y explotación social",
+    "enlace": "../articulos/modelos-politicos.html"
+  },
+  {
+    "id": 5,
+    "categoria": "ATENCIÓN",
+    "titulo": "Ya no sabemos concentrarnos",
+    "descripcion": "Nos cuesta estar presentes incluso cuando queremos hacerlo.",
+    "autor": "Juan Pablo Zamora Romero",
+    "portada": "ATENCIÓN",
+    "enlace": "../articulos/concentracion.html"
+  },
+  {
+    "id": 6,
+    "categoria": "ACTUALIDAD",
+    "titulo": "El peso de estar informado",
+    "descripcion": "Cuando las noticias dejan de informar y empiezan a agotarnos.",
+    "autor": "Juan Pablo Zamora Romero",
+    "portada": "ACTUALIDAD",
+    "enlace": "../articulos/peso-de-estar-informado.html"
+  }
+]

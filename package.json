@@ -1,0 +1,8 @@
+{
+  "name": "nodo-blog",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "sweetalert2": "^11.26.25"
+  }
+}

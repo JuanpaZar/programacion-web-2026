@@ -45,7 +45,8 @@
     "titulo": "Ya no sabemos concentrarnos",
     "descripcion": "Nos cuesta estar presentes incluso cuando queremos hacerlo.",
     "autor": "Juan Pablo Zamora Romero",
-    "portada": "ATENCIÓN",
+    "imagen": "../assets/img/concentracion.jpg",
+    "alt": "Persona intentando concentrarse mientras utiliza su teléfono",
     "enlace": "../articulos/concentracion.html"
   },
   {
@@ -54,7 +55,8 @@
     "titulo": "El peso de estar informado",
     "descripcion": "Cuando las noticias dejan de informar y empiezan a agotarnos.",
     "autor": "Juan Pablo Zamora Romero",
-    "portada": "ACTUALIDAD",
+    "imagen": "../assets/img/noticias.jpg",
+    "alt": "Persona preocupada mientras lee noticias en su teléfono",
     "enlace": "../articulos/peso-de-estar-informado.html"
   }
 ]

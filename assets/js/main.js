@@ -1,5 +1,6 @@
 import { iniciarFormulario } from "./formulario.js";
 import { iniciarArticulos } from "./articulos.js";
+import { iniciarFavoritos } from "./favoritos.js";
 
 const botonMenu = document.getElementById("boton-menu");
 const menu = document.querySelector(".menu");
@@ -44,29 +45,62 @@ if (botonTema) {
 
 
 const buscador = document.getElementById("buscador-articulos");
+const botonVerMas = document.getElementById("boton-ver-mas");
+
+let mostrarTodos = false;
+
+function filtrarArticulos() {
+    if (!buscador) {
+        return;
+    }
+
+    const texto = buscador.value.trim().toLowerCase();
+    const tarjetas = document.querySelectorAll(".articulos__tarjeta");
+    let encontrados = 0;
+
+    tarjetas.forEach(function (tarjeta, indice) {
+        const contenido = tarjeta.textContent.toLowerCase();
+        const coincide = contenido.includes(texto);
+        const mostrar = coincide && (texto !== "" || mostrarTodos || indice < 4 || !botonVerMas);
+
+        tarjeta.hidden = !mostrar;
+
+        if (mostrar) {
+            encontrados++;
+        }
+    });
+
+    const estado = document.getElementById("estado-articulos");
+
+    if (estado && tarjetas.length > 0) {
+        estado.textContent = encontrados === 0 ? "No se encontraron artículos." : "";
+    }
+
+    const estadoBusqueda = document.getElementById("estado-busqueda");
+
+    if (estadoBusqueda) {
+        estadoBusqueda.textContent = texto !== "" && encontrados === 0 ? "No se encontraron artículos." : "";
+    }
+
+    if (botonVerMas) {
+        botonVerMas.hidden = texto !== "";
+    }
+}
+
 
 if (buscador) {
-    buscador.addEventListener("input", function () {
-        const texto = buscador.value.trim().toLowerCase();
-        const tarjetas = document.querySelectorAll(".articulos__tarjeta");
-        let encontrados = 0;
+    buscador.addEventListener("input", filtrarArticulos);
+}
 
-        tarjetas.forEach(function (tarjeta) {
-            const contenido = tarjeta.textContent.toLowerCase();
-            const coincide = contenido.includes(texto);
 
-            tarjeta.classList.toggle("oculto", !coincide);
+if (botonVerMas) {
+    botonVerMas.addEventListener("click", function () {
+        mostrarTodos = !mostrarTodos;
 
-            if (coincide) {
-                encontrados++;
-            }
-        });
+        botonVerMas.textContent = mostrarTodos ? "Ver menos artículos" : "Ver más artículos";
+        botonVerMas.setAttribute("aria-expanded", String(mostrarTodos));
 
-        const estado = document.getElementById("estado-articulos");
-
-        if (estado && tarjetas.length > 0) {
-            estado.textContent = encontrados === 0 ? "No se encontraron artículos." : "";
-        }
+        filtrarArticulos();
     });
 }
 
@@ -101,4 +135,5 @@ if (formSugerencias) {
 
 
 iniciarFormulario();
+iniciarFavoritos();
 iniciarArticulos();

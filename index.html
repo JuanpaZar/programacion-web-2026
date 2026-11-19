@@ -93,7 +93,7 @@
 
     <hr>
 
-    <section class="articulos">
+    <section class="articulos" id="articulos-inicio">
       <p class="destacado">NUEVO EN NODO</p>
       <h2>Artículos recientes</h2>
 
@@ -101,7 +101,9 @@
         <input type="search" id="buscador-articulos" placeholder="Buscar artículos..." aria-label="Buscar artículos">
       </div>
 
-      <div class="articulos__lista">
+      <p id="estado-busqueda" role="status" aria-live="polite"></p>
+
+      <div class="articulos__lista" id="lista-inicio">
 
         <article class="articulos__tarjeta">
           <p class="articulos__categoria">
@@ -111,6 +113,7 @@
           <h3 class="articulos__titulo">La pandemia de la soledad.</h3>
           <p>Conectados como nunca pero desde el mundo virtual.</p>
           <small>30 Agosto 2026 | 8 min de lectura</small>
+          <button type="button" class="boton-favorito" data-favorito="1" aria-pressed="false" aria-label="Guardar La pandemia de la soledad">♡ Guardar</button>
           <a class="boton" href="articulos/pandemia-soledad.html">Leer artículo</a>
         </article>
 
@@ -122,6 +125,7 @@
           <h3 class="articulos__titulo">No son tus ideas</h3>
           <p>Cuestiona el origen de tus ideas, de dónde vienen.</p>
           <small>30 Agosto 2026 | 9 min de lectura</small>
+          <button type="button" class="boton-favorito" data-favorito="2" aria-pressed="false" aria-label="Guardar No son tus ideas">♡ Guardar</button>
           <a class="boton" href="articulos/no-son-tus-ideas.html">Leer artículo</a>
         </article>
 
@@ -133,6 +137,7 @@
           <h3 class="articulos__titulo">Scroll infinito, vacío real</h3>
           <p>Reorganizan nuestro deseo.</p>
           <small>30 Agosto 2026 | 8 min de lectura</small>
+          <button type="button" class="boton-favorito" data-favorito="3" aria-pressed="false" aria-label="Guardar Scroll infinito, vacío real">♡ Guardar</button>
           <a class="boton" href="articulos/scroll-infinito.html">Leer artículo</a>
         </article>
 
@@ -144,10 +149,11 @@
           <h3 class="articulos__titulo">Modelos políticos</h3>
           <p>Economía mundial.</p>
           <small>30 Agosto 2026 | 10 min de lectura</small>
+          <button type="button" class="boton-favorito" data-favorito="4" aria-pressed="false" aria-label="Guardar Modelos políticos">♡ Guardar</button>
           <a class="boton" href="articulos/modelos-politicos.html">Leer artículo</a>
         </article>
 
-        <article class="articulos__tarjeta">
+        <article class="articulos__tarjeta" hidden>
           <p class="articulos__categoria">
             <strong>ATENCIÓN</strong>
           </p>
@@ -155,10 +161,11 @@
           <h3 class="articulos__titulo">Ya no sabemos concentrarnos</h3>
           <p>Nos cuesta estar presentes incluso cuando queremos hacerlo.</p>
           <small>Juan Pablo Zamora Romero</small>
+          <button type="button" class="boton-favorito" data-favorito="5" aria-pressed="false" aria-label="Guardar Ya no sabemos concentrarnos">♡ Guardar</button>
           <a class="boton" href="articulos/concentracion.html">Leer artículo</a>
         </article>
 
-        <article class="articulos__tarjeta">
+        <article class="articulos__tarjeta" hidden>
           <p class="articulos__categoria">
             <strong>ACTUALIDAD</strong>
           </p>
@@ -166,10 +173,27 @@
           <h3 class="articulos__titulo">El peso de estar informado</h3>
           <p>Cuando las noticias dejan de informar y empiezan a agotarnos.</p>
           <small>Juan Pablo Zamora Romero</small>
+          <button type="button" class="boton-favorito" data-favorito="6" aria-pressed="false" aria-label="Guardar El peso de estar informado">♡ Guardar</button>
           <a class="boton" href="articulos/peso-de-estar-informado.html">Leer artículo</a>
         </article>
 
+        <article class="articulos__tarjeta" hidden>
+          <p class="articulos__categoria">
+            <strong>SALUD MENTAL</strong>
+          </p>
+          <img class="articulos__imagen" src="assets/img/salud-mental.jpg" alt="Persona agotada por sus responsabilidades diarias" width="300" height="200" loading="lazy">
+          <h3 class="articulos__titulo">¿Cuánto cuesta estar bien?</h3>
+          <p>Cuidar nuestra salud mental es importante, pero también hay que pagar las cuentas.</p>
+          <small>Juan Pablo Zamora Romero</small>
+          <button type="button" class="boton-favorito" data-favorito="7" aria-pressed="false" aria-label="Guardar ¿Cuánto cuesta estar bien?">♡ Guardar</button>
+          <a class="boton" href="articulos/cuanto-cuesta-estar-bien.html">Leer artículo</a>
+        </article>
+
       </div>
+
+      <p class="articulos__ver-todos">
+        <button type="button" class="boton" id="boton-ver-mas" aria-expanded="false" aria-controls="lista-inicio">Ver más artículos</button>
+      </p>
 
       <p class="articulos__ver-todos">
         <a class="boton" href="pages/articulos.html">Ver todos los artículos</a>

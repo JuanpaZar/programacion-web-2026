@@ -58,5 +58,15 @@
     "imagen": "../assets/img/noticias.jpg",
     "alt": "Persona preocupada mientras lee noticias en su teléfono",
     "enlace": "../articulos/peso-de-estar-informado.html"
+  },
+  {
+    "id": 7,
+    "categoria": "SALUD MENTAL",
+    "titulo": "¿Cuánto cuesta estar bien?",
+    "descripcion": "Cuidar nuestra salud mental es importante, pero también hay que pagar las cuentas.",
+    "autor": "Juan Pablo Zamora Romero",
+    "imagen": "../assets/img/salud-mental.jpg",
+    "alt": "Persona agotada por sus responsabilidades diarias",
+    "enlace": "../articulos/cuanto-cuesta-estar-bien.html"
   }
 ]

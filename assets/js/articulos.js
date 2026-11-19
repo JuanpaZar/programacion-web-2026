@@ -1,3 +1,5 @@
+import { actualizarFavoritos } from "./favoritos.js";
+
 export async function iniciarArticulos() {
     const lista = document.getElementById("lista-articulos");
 
@@ -63,14 +65,23 @@ export async function iniciarArticulos() {
             const autor = document.createElement("small");
             autor.textContent = articulo.autor;
 
+            const favorito = document.createElement("button");
+            favorito.type = "button";
+            favorito.classList.add("boton-favorito");
+            favorito.dataset.favorito = String(articulo.id);
+            favorito.setAttribute("aria-pressed", "false");
+            favorito.setAttribute("aria-label", "Guardar " + articulo.titulo);
+
             const enlace = document.createElement("a");
             enlace.classList.add("boton");
             enlace.href = articulo.enlace;
             enlace.textContent = "Leer artículo";
 
-            tarjeta.append(titulo, descripcion, autor, enlace);
+            tarjeta.append(titulo, descripcion, autor, favorito, enlace);
             lista.append(tarjeta);
         });
+
+        actualizarFavoritos();
 
         estado.textContent = articulos.length === 0 ? "No hay artículos disponibles." : "";
 

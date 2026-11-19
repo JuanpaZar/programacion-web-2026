@@ -735,3 +735,84 @@ body.tema-oscuro {
   color: var(--color-texto);
   opacity: 0.8;
 }
+
+
+/*
+   17. TARJETAS Y MOSTRAR MÁS
+ */
+
+.articulos__tarjeta[hidden],
+#boton-ver-mas[hidden] {
+  display: none;
+}
+
+.articulos__tarjeta .articulos__imagen {
+  display: block;
+  height: 170px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.articulos__tarjeta .articulos__imagen-texto {
+  height: 170px;
+  min-height: 170px;
+}
+
+.articulos__tarjeta .boton {
+  margin-top: auto;
+}
+
+
+/*
+   18. FAVORITOS Y NAVEGACIÓN
+ */
+
+.boton-favorito {
+  padding: 8px 12px;
+  background-color: transparent;
+  color: var(--color-texto-inverso);
+  border: 1px solid var(--color-acento);
+  border-radius: var(--radio-borde);
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+}
+
+.boton-favorito.activo {
+  color: #F08080;
+  border-color: #F08080;
+}
+
+.boton-favorito:focus-visible {
+  outline: 2px solid var(--color-acento);
+  outline-offset: 3px;
+}
+
+.articulos__tarjeta .boton-favorito {
+  align-self: flex-start;
+  margin-top: var(--espaciado-s);
+  margin-bottom: var(--espaciado-s);
+}
+
+.lectura .boton-favorito {
+  color: var(--color-texto);
+}
+
+.lectura .boton-favorito.activo {
+  color: #F08080;
+}
+
+.lectura__navegacion {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--espaciado-s);
+  margin-top: 40px;
+  margin-bottom: var(--espaciado);
+  padding-top: var(--espaciado);
+  border-top: 1px solid var(--color-acento);
+}
+
+#estado-busqueda {
+  text-align: center;
+  color: var(--color-acento);
+}

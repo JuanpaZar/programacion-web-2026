@@ -4,15 +4,38 @@ const claveFavoritos = "nodo_favoritos";
 const clavePerfil = "nodo_perfil";
 
 
-function tieneSesion() {
+export function tieneSesion() {
     try {
         const perfil = JSON.parse(localStorage.getItem(clavePerfil));
 
-        return perfil && typeof perfil.nombre === "string" && perfil.nombre.trim() !== "";
+        return Boolean(
+            perfil &&
+            typeof perfil.nombre === "string" &&
+            perfil.nombre.trim() !== ""
+        );
     } catch (error) {
         console.error("No se pudo leer el perfil", error);
         return false;
     }
+}
+
+
+export function solicitarRegistro() {
+    const script = document.querySelector('script[src$="assets/js/main.js"]');
+    const rutaBase = script && script.getAttribute("src").startsWith("../") ? "../" : "";
+
+    Swal.fire({
+        icon: "info",
+        title: "Necesitas registrarte",
+        text: "Crea un perfil para guardar artículos y reaccionar a las publicaciones.",
+        showCancelButton: true,
+        confirmButtonText: "Registrarme",
+        cancelButtonText: "Cancelar"
+    }).then(function (resultado) {
+        if (resultado.isConfirmed) {
+            window.location.href = rutaBase + "pages/registro.html";
+        }
+    });
 }
 
 
@@ -63,22 +86,7 @@ export function iniciarFavoritos() {
         }
 
         if (!tieneSesion()) {
-            const script = document.querySelector('script[src$="assets/js/main.js"]');
-            const rutaBase = script && script.getAttribute("src").startsWith("../") ? "../" : "";
-
-            Swal.fire({
-                icon: "info",
-                title: "Necesitas registrarte",
-                text: "Crea un perfil para guardar tus artículos favoritos.",
-                showCancelButton: true,
-                confirmButtonText: "Registrarme",
-                cancelButtonText: "Cancelar"
-            }).then(function (resultado) {
-                if (resultado.isConfirmed) {
-                    window.location.href = rutaBase + "pages/registro.html";
-                }
-            });
-
+            solicitarRegistro();
             return;
         }
 

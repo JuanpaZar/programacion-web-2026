@@ -2,11 +2,11 @@
 <html lang="es">
 
 <head>
-  <link rel="icon" href="../assets/icons/nodo.jpg">
-  <title>Mis favoritos | NODO</title>
+  <title>Mis guardados | NODO</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/styles.css">
+  <link rel="icon" href="../assets/icons/nodo.jpg">
 </head>
 
 <body class="layout tema-oscuro">
@@ -19,14 +19,10 @@
   <main class="contenido">
 
     <section class="archivo">
-      <p class="destacado">MI BIBLIOTECA</p>
-      <h2>Mis favoritos</h2>
+      <p class="destacado">PARA LEER DESPUÉS</p>
+      <h2>Guardados</h2>
 
-      <p>Aquí puedes encontrar los artículos que guardaste para leer después o volver a visitar.</p>
-
-      <p>Los favoritos se guardan en este navegador.</p>
-
-      <p id="estado-articulos" role="status" aria-live="polite">Cargando favoritos...</p>
+      <p id="estado-articulos" role="status" aria-live="polite">Cargando artículos guardados...</p>
 
       <div class="articulos__lista" id="lista-articulos" data-solo-favoritos="true">
 
@@ -35,17 +31,15 @@
 
     <hr>
 
-    <section class="sobre-nodo">
-      <p class="destacado">SEGUIR LEYENDO</p>
-      <h2>Siempre hay algo más por descubrir.</h2>
+    <section class="archivo">
+      <p class="destacado">MIS REACCIONES</p>
+      <h2>Likes</h2>
 
-      <p>Explora las publicaciones de NODO y guarda aquellas a las que quieras regresar.</p>
+      <p id="estado-me-gustaron" role="status" aria-live="polite"></p>
 
-      <a class="boton" href="articulos.html">Explorar artículos</a>
+      <div class="articulos__lista" id="lista-me-gustaron">
 
-      <p>
-        <a class="boton" href="../index.html">Volver al inicio</a>
-      </p>
+      </div>
     </section>
 
   </main>

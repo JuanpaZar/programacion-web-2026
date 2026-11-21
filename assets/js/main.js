@@ -3,6 +3,7 @@ import { iniciarArticulos } from "./articulos.js";
 import { iniciarFavoritos } from "./favoritos.js";
 import { iniciarMenu } from "./menu.js";
 import { iniciarPerfil } from "./perfil.js";
+import { iniciarReacciones } from "./reacciones.js";
 
 iniciarMenu();
 
@@ -132,3 +133,4 @@ iniciarFormulario();
 iniciarFavoritos();
 iniciarArticulos();
 iniciarPerfil();
+iniciarReacciones();

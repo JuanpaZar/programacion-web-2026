@@ -40,7 +40,7 @@ export function iniciarMenu() {
                 <a class="menu__enlace" href="${rutaBase}pages/articulos.html">Artículos</a>
             </li>
             <li class="menu__item">
-                <a class="menu__enlace" href="${rutaBase}pages/favoritos.html">Mis favoritos</a>
+                <a class="menu__enlace" href="${rutaBase}pages/favoritos.html">Mis guardados</a>
             </li>
             <li class="menu__item">
                 <a class="menu__enlace" href="${rutaBase}pages/temas.html">Temas</a>

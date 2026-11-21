@@ -1,4 +1,20 @@
+import Swal from "../vendor/sweetalert2.esm.all.js";
+
 const claveFavoritos = "nodo_favoritos";
+const clavePerfil = "nodo_perfil";
+
+
+function tieneSesion() {
+    try {
+        const perfil = JSON.parse(localStorage.getItem(clavePerfil));
+
+        return perfil && typeof perfil.nombre === "string" && perfil.nombre.trim() !== "";
+    } catch (error) {
+        console.error("No se pudo leer el perfil", error);
+        return false;
+    }
+}
+
 
 export function leerFavoritos() {
     try {
@@ -43,6 +59,26 @@ export function iniciarFavoritos() {
         const boton = e.target.closest(".boton-favorito");
 
         if (!boton) {
+            return;
+        }
+
+        if (!tieneSesion()) {
+            const script = document.querySelector('script[src$="assets/js/main.js"]');
+            const rutaBase = script && script.getAttribute("src").startsWith("../") ? "../" : "";
+
+            Swal.fire({
+                icon: "info",
+                title: "Necesitas registrarte",
+                text: "Crea un perfil para guardar tus artículos favoritos.",
+                showCancelButton: true,
+                confirmButtonText: "Registrarme",
+                cancelButtonText: "Cancelar"
+            }).then(function (resultado) {
+                if (resultado.isConfirmed) {
+                    window.location.href = rutaBase + "pages/registro.html";
+                }
+            });
+
             return;
         }
 

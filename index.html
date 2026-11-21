@@ -31,7 +31,7 @@
 
 <body class="layout tema-oscuro">
 
-  <header class="encabezado">
+  <header class="encabezado encabezado--inicio">
 
     <nav class="menu">
 
@@ -70,29 +70,59 @@
 
   <main class="contenido">
 
-    <section class="presentacion">
-      <p class="destacado">BLOG</p>
-      <h2>La pandemia de la soledad.</h2>
+    <section class="bienvenida">
+      <p class="destacado">NODO / BLOG EDITORIAL</p>
 
-      <img class="presentacion__imagen" src="assets/img/portada-soledad.jpg" alt="Personas utilizando sus teléfonos en un espacio público" width="700" height="350">
+      <h2>Problemas sociales no muy hablados</h2>
 
-      <p class="presentacion__texto">
-        Vivimos hiperconectados, pero cada vez más aislados.
-        Un espacio para pensar los vínculos, las redes sociales
-        y las condiciones que moldean nuestra vida.
+      <p class="bienvenida__texto">
+        Una pagina para leer y reflexionar mas acerca de la mente humana 
+        y las condiciones materiales que forjan nuestra vida y nuestro ser
       </p>
 
-      <div class="presentacion__enlaces">
-        <a class="boton" href="articulos/pandemia-soledad.html">Leer artículo</a>
-        <a class="boton" href="pages/temas.html">Explorar temas</a>
+      <div class="bienvenida__enlaces">
+        <a class="boton" href="#articulos-inicio">Explorar artículos</a>
+        <a class="boton bienvenida__boton-secundario" href="pages/sobre-mi.html">Sobre NODO</a>
+      </div>
+
+      <p class="bienvenida__temas">SOCIEDAD · TECNOLOGÍA · MEMORIA -->  OPINIÓN</p>
+    </section>
+
+    <hr>
+
+    <section class="portada">
+      <p class="destacado">EN PORTADA</p>
+      <h2>Lectura recomendada</h2>
+
+      <div class="portada__contenido">
+
+        <img class="portada__imagen" src="assets/img/nostalgia.jpg" alt="Imagen melancólica que evoca recuerdos del pasado" loading="lazy">
+
+        <div class="portada__informacion">
+          <p class="destacado">MEMORIA</p>
+          <h3>Esclavos de la nostalgia</h3>
+
+          <p>
+            A veces extrañamos tanto el pasado que dejamos de vivir nuestro presente.
+          </p>
+
+          <p>
+            ¿En qué momento recordar lo que nos hizo felices empieza
+            a impedirnos ser felices otra vez?
+          </p>
+
+          <a class="boton" href="articulos/esclavos-de-la-nostalgia.html">Leer artículo</a>
+        </div>
+
       </div>
     </section>
 
     <hr>
 
     <section class="articulos" id="articulos-inicio">
-      <p class="destacado">NUEVO EN NODO</p>
+      <p class="destacado">EXPLORAR</p>
       <h2>Artículos recientes</h2>
+      <p>Ideas sobre lo que vivimos, pensamos y pocas veces cuestionamos.</p>
 
       <div class="buscador">
         <input type="search" id="buscador-articulos" placeholder="Buscar artículos..." aria-label="Buscar artículos">
@@ -186,6 +216,18 @@
           <a class="boton" href="articulos/cuanto-cuesta-estar-bien.html">Leer artículo</a>
         </article>
 
+        <article class="articulos__tarjeta" hidden>
+          <p class="articulos__categoria">
+            <strong>MEMORIA</strong>
+          </p>
+          <img class="articulos__imagen" src="assets/img/nostalgia.jpg" alt="Imagen melancólica que evoca recuerdos del pasado" width="300" height="200" loading="lazy">
+          <h3 class="articulos__titulo">Esclavos de la nostalgia</h3>
+          <p>A veces extrañamos tanto el pasado que dejamos de vivir nuestro presente.</p>
+          <small>Juan Pablo Zamora Romero</small>
+          <button type="button" class="boton-favorito" data-favorito="8" aria-pressed="false" aria-label="Guardar Esclavos de la nostalgia">♡ Guardar</button>
+          <a class="boton" href="articulos/esclavos-de-la-nostalgia.html">Leer artículo</a>
+        </article>
+
       </div>
 
       <p class="articulos__ver-todos">
@@ -195,6 +237,21 @@
       <p class="articulos__ver-todos">
         <a class="boton" href="pages/articulos.html">Ver todos los artículos</a>
       </p>
+    </section>
+
+    <hr>
+
+    <section class="sobre-nodo">
+      <p class="destacado">EL PROYECTO</p>
+      <h2>¿Por qué NODO?</h2>
+
+      <p>
+        Porque a veces aceptamos como normales cosas que merecen y tienen que ser cuestionadas.
+        NODO es para leer y abrir conversaciones
+        sobre lo que vivimos y muy rara vez somos concientes
+      </p>
+
+      <a class="boton" href="pages/sobre-mi.html">Conoce el proyecto</a>
     </section>
 
     <hr>

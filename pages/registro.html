@@ -9,7 +9,7 @@
 </head>
 
 <body class="layout tema-oscuro">
-  <header>
+  <header class="encabezado">
     <h1>Crear cuenta</h1>
     <p>Registrate</p>
   </header>
@@ -45,7 +45,7 @@
         </div>
         <br>
 
-    <div>
+        <div>
           <label for="inp-contrasena">Contraseña:</label>
           <input
             type="password"
@@ -60,14 +60,18 @@
 
         <div>
           <label for="sel-tema">Tema que mas te interesa:</label>
-          <select id="sel-tema" name="tema">
+          <select id="sel-tema" name="tema" required>
+            <option value="seleccionar" selected disabled>Seleccionar</option>
+            <option value="sin-preferencias">Sin preferencias</option>
             <option value="sociedad">Sociedad contemporanea</option>
             <option value="tecnologia">El impacto de la Tecnologia y redes sociales</option>
             <option value="cultura">Algoritmos</option>
             <option value="condiciones-materiales">Condiciones materiales</option>
           </select>
+          <span class="error-campo" data-error-para="tema"></span>
         </div>
         <br>
+
         <div>
           <p>Que tipo de contenido prefieres?</p>
 
@@ -78,7 +82,8 @@
             value="corto"
             checked>
           <label for="rad-corto">Lecturas cortas</label>
-           <input
+
+          <input
             type="radio"
             id="rad-largo"
             name="tipo_contenido"
@@ -87,14 +92,14 @@
         </div>
         <br>
 
-         <div>
+        <div>
           <label for="txt-temas">De cual tema te interesaria saber mas?</label>
           <textarea
             id="txt-temas"
             name="temas"
             placeholder="Escribe aqui algun tema que te interese"></textarea>
         </div>
-    <br>
+        <br>
 
         <div>
           <input
@@ -103,15 +108,15 @@
             name="notificaciones"
             value="aceptado">
 
-           <label for="chk-notificaciones">
+          <label for="chk-notificaciones">
             Quiero recibir nuevos articulos por correo
           </label>
         </div>
       </fieldset>
       <br>
 
-    <div>
-         <button type="submit">Crear cuenta</button>
+      <div>
+        <button type="submit">Crear cuenta</button>
       </div>
 
       <p id="mensaje-registro"></p>

@@ -68,5 +68,15 @@
     "imagen": "../assets/img/salud-mental.jpg",
     "alt": "Persona agotada por sus responsabilidades diarias",
     "enlace": "../articulos/cuanto-cuesta-estar-bien.html"
+  },
+  {
+    "id": 8,
+    "categoria": "MEMORIA",
+    "titulo": "Esclavos de la nostalgia",
+    "descripcion": "A veces extrañamos tanto el pasado que dejamos de vivir nuestro presente.",
+    "autor": "Juan Pablo Zamora Romero",
+    "imagen": "../assets/img/nostalgia.jpg",
+    "alt": "Imagen melancólica que evoca recuerdos del pasado",
+    "enlace": "../articulos/esclavos-de-la-nostalgia.html"
   }
 ]

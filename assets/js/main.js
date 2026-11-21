@@ -1,16 +1,10 @@
 import { iniciarFormulario } from "./formulario.js";
 import { iniciarArticulos } from "./articulos.js";
 import { iniciarFavoritos } from "./favoritos.js";
+import { iniciarMenu } from "./menu.js";
+import { iniciarPerfil } from "./perfil.js";
 
-const botonMenu = document.getElementById("boton-menu");
-const menu = document.querySelector(".menu");
-
-if (botonMenu && menu) {
-    botonMenu.addEventListener("click", function () {
-        const abierto = menu.classList.toggle("menu--abierto");
-        botonMenu.setAttribute("aria-expanded", String(abierto));
-    });
-}
+iniciarMenu();
 
 
 const botonTema = document.getElementById("boton-tema");
@@ -137,3 +131,4 @@ if (formSugerencias) {
 iniciarFormulario();
 iniciarFavoritos();
 iniciarArticulos();
+iniciarPerfil();

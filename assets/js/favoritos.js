@@ -1,6 +1,6 @@
 const claveFavoritos = "nodo_favoritos";
 
-function leerFavoritos() {
+export function leerFavoritos() {
     try {
         const favoritos = JSON.parse(localStorage.getItem(claveFavoritos));
 
@@ -59,5 +59,7 @@ export function iniciarFavoritos() {
 
         guardarFavoritos(favoritos);
         actualizarFavoritos();
+
+        document.dispatchEvent(new Event("favoritos-actualizados"));
     });
 }

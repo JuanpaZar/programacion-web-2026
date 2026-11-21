@@ -1,4 +1,5 @@
 import { validarRegistro } from "./validaciones.js";
+import { guardarPerfilLocal } from "./perfil.js";
 import Swal from "../vendor/sweetalert2.esm.all.js";
 
 export function iniciarFormulario() {
@@ -40,13 +41,16 @@ export function iniciarFormulario() {
             return;
         }
 
+        guardarPerfilLocal(datos.nombre);
+
         Swal.fire({
             icon: "success",
             title: "Cuenta creada.",
             confirmButtonText: "Aceptar"
+        }).then(function () {
+            formulario.reset();
+            window.location.href = "../index.html";
         });
-
-        formulario.reset();
     });
 
 

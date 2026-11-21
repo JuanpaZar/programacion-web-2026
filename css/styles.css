@@ -1,7 +1,6 @@
-/* 
-   ÍNDICE */
-
 /*
+   ÍNDICE
+
 1. Variables y configuración general
 2. Estilos generales
 3. Encabezado
@@ -13,10 +12,19 @@
 9. Pie de página
 10. Animaciones
 11. Accesibilidad
+12. Interacciones
+13. Formulario de registro
+14. Página de artículos
+15. Lectura de artículos
+16. Sugerencias
+17. Tarjetas y mostrar más
+18. Favoritos y navegación
+19. Nuevo inicio editorial
+20. Animación del menú
 */
 
 
-/* 
+/*
    1. VARIABLES Y CONFIGURACIÓN GENERAL
  */
 
@@ -64,7 +72,7 @@
 }
 
 
-/* 
+/*
    2. ESTILOS GENERALES
  */
 
@@ -128,7 +136,7 @@ h3 {
 }
 
 
-/* 
+/*
    4. MENÚ DE NAVEGACIÓN
  */
 
@@ -172,7 +180,7 @@ h3 {
 }
 
 
-/* 
+/*
    5. PRESENTACIÓN PRINCIPAL
  */
 
@@ -217,7 +225,7 @@ h3 {
 }
 
 
-/* 
+/*
    6. ARTÍCULOS Y TARJETAS
  */
 
@@ -285,7 +293,8 @@ h3 {
 
 
 /*
-   7. BOTONES */
+   7. BOTONES
+ */
 
 .boton {
   display: inline-block;
@@ -311,8 +320,9 @@ h3 {
 }
 
 
-/* 
-   8. FORMULARIO DE SUSCRIPCIÓN */
+/*
+   8. FORMULARIO DE SUSCRIPCIÓN
+ */
 
 .suscripcion {
   width: min(90%, 700px);
@@ -336,7 +346,7 @@ h3 {
 }
 
 
-/* 
+/*
    9. PIE DE PÁGINA
  */
 
@@ -348,8 +358,8 @@ h3 {
 }
 
 
-/* 
-10. ANIMACIONES
+/*
+   10. ANIMACIONES
  */
 
 @keyframes aparecer {
@@ -369,7 +379,8 @@ h3 {
   }
 }
 
-/* 
+
+/*
    11. ACCESIBILIDAD
  */
 
@@ -392,7 +403,6 @@ h3 {
    12. INTERACCIONES
  */
 
-
 .menu .menu__lista {
   display: none;
   flex-direction: column;
@@ -411,7 +421,6 @@ h3 {
 .menu.menu--abierto .menu__lista {
   display: flex;
 }
-
 
 .boton-interactivo {
   display: inline-block;
@@ -433,7 +442,6 @@ h3 {
   outline-offset: 3px;
 }
 
-
 .menu__boton {
   background-color: var(--color-boton);
   color: var(--color-texto-boton);
@@ -453,6 +461,7 @@ h3 {
   background-color: #2E3440;
   color: #FFFFFF;
 }
+
 
 /* Modo */
 
@@ -474,7 +483,6 @@ body.tema-claro {
   --color-texto-boton-hover: #FFFFFF;
 }
 
-
 body.tema-oscuro {
   color-scheme: dark;
 
@@ -492,6 +500,7 @@ body.tema-oscuro {
   --color-texto-boton: #2E3440;
   --color-texto-boton-hover: #FFFFFF;
 }
+
 
 /* Buscador */
 
@@ -513,7 +522,6 @@ body.tema-oscuro {
 .articulos__tarjeta.oculto {
   display: none;
 }
-
 
 @media (max-width: 480px) {
   .encabezado {
@@ -815,4 +823,274 @@ body.tema-oscuro {
 #estado-busqueda {
   text-align: center;
   color: var(--color-acento);
+}
+
+
+/*
+   19. NUEVO INICIO EDITORIAL
+ */
+
+/* Encabezado más compacto en Inicio */
+
+.encabezado--inicio {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.encabezado--inicio h1 {
+  margin: 12px 0 4px;
+  font-size: clamp(2.4rem, 5vw, 3.5rem);
+}
+
+.encabezado--inicio .encabezado__descripcion {
+  margin: 5px 0 12px;
+}
+
+/* Bienvenida */
+
+.bienvenida {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 65px 20px 55px;
+  text-align: center;
+}
+
+.bienvenida h2 {
+  max-width: 850px;
+  margin: 15px auto 20px;
+  font-size: clamp(2rem, 4.5vw, 3.6rem);
+  line-height: 1.2;
+}
+
+.bienvenida__texto {
+  max-width: 680px;
+  margin: 0 auto;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.8;
+}
+
+.bienvenida__enlaces {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.bienvenida__boton-secundario {
+  background-color: transparent;
+  color: var(--color-texto);
+  border: 1px solid var(--color-acento);
+}
+
+.bienvenida__boton-secundario:hover {
+  background-color: var(--color-acento);
+  color: var(--color-texto-boton);
+}
+
+.bienvenida__temas {
+  margin-top: 50px;
+  color: var(--color-acento);
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  line-height: 1.8;
+}
+
+/* Artículo destacado */
+
+.portada {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 45px 20px 55px;
+}
+
+.portada > h2 {
+  margin-top: 5px;
+  margin-bottom: 30px;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+}
+
+.portada__contenido {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  padding: 25px;
+  background-color: var(--color-secundario);
+  color: var(--color-texto-inverso);
+  border: 1px solid var(--color-acento);
+  border-radius: var(--radio-borde);
+}
+
+.portada__imagen {
+  display: block;
+  width: 48%;
+  height: 310px;
+  object-fit: cover;
+  border-radius: var(--radio-borde);
+}
+
+.portada__informacion {
+  flex: 1;
+}
+
+.portada__informacion h3 {
+  margin-top: 10px;
+  font-size: clamp(1.5rem, 3vw, 2.3rem);
+}
+
+.portada__informacion p {
+  line-height: 1.8;
+}
+
+.portada__informacion .boton {
+  margin-top: 15px;
+}
+
+/* Sección sobre NODO */
+
+.sobre-nodo {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 55px 20px;
+  text-align: center;
+}
+
+.sobre-nodo h2 {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+}
+
+.sobre-nodo > p:not(.destacado) {
+  max-width: 680px;
+  margin: 20px auto 30px;
+  line-height: 1.9;
+}
+
+/* Adaptación para pantallas pequeñas */
+
+@media (max-width: 700px) {
+  .encabezado--inicio {
+    padding-top: 65px;
+  }
+
+  .bienvenida {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .bienvenida__temas {
+    margin-top: 35px;
+  }
+
+  .portada {
+    padding: 30px 10px;
+  }
+
+  .portada__contenido {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .portada__imagen {
+    width: 100%;
+    height: 230px;
+  }
+
+  .portada__informacion {
+    padding: 5px;
+  }
+
+  .sobre-nodo {
+    padding: 35px 15px;
+  }
+}
+
+
+/*
+   20. ANIMACIÓN DEL MENÚ
+ */
+
+.menu__enlace {
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.menu__enlace:hover {
+  background-color: var(--color-acento);
+  color: var(--color-texto-boton);
+  border-color: var(--color-acento);
+  transform: translateY(-3px);
+}
+
+.menu__boton,
+.tema__boton {
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.menu__boton:hover,
+.tema__boton:hover {
+  transform: translateY(-3px);
+}
+
+.menu__enlace:active,
+.menu__boton:active,
+.tema__boton:active {
+  transform: translateY(0);
+}
+
+
+/*
+   21. CAMPOS DEL FORMULARIO
+ */
+
+#form-registro fieldset > label {
+  display: block;
+  margin-top: 18px;
+  margin-bottom: 8px;
+}
+
+#form-registro input:not([type="radio"]):not([type="checkbox"]),
+#form-registro select {
+  display: block;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+#form-registro textarea {
+  margin-top: 8px;
+}
+
+#form-registro fieldset > label:has(input[type="checkbox"]),
+#form-registro fieldset > label:has(input[type="radio"]) {
+  display: inline-block;
+  margin-top: 12px;
+}
+
+
+/*
+   22. ANIMACIÓN DE LECTURA RECOMENDADA
+ */
+
+.portada__contenido {
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portada__contenido:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-acento);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portada__contenido {
+    transition: none;
+  }
 }

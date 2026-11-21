@@ -1,4 +1,4 @@
-import { actualizarFavoritos } from "./favoritos.js";
+import { actualizarFavoritos, leerFavoritos } from "./favoritos.js";
 
 export async function iniciarArticulos() {
     const lista = document.getElementById("lista-articulos");
@@ -8,8 +8,9 @@ export async function iniciarArticulos() {
     }
 
     const estado = document.getElementById("estado-articulos");
+    const soloFavoritos = lista.dataset.soloFavoritos === "true";
 
-    estado.textContent = "Cargando artículos...";
+    estado.textContent = soloFavoritos ? "Cargando favoritos..." : "Cargando artículos...";
 
     try {
         const respuesta = await fetch("../assets/data/articulos.json");
@@ -24,72 +25,102 @@ export async function iniciarArticulos() {
             throw new Error("Los datos no son validos");
         }
 
-        lista.replaceChildren();
+        function mostrarArticulos() {
+            lista.replaceChildren();
 
-        articulos.forEach(function (articulo) {
-            const tarjeta = document.createElement("article");
-            tarjeta.classList.add("articulos__tarjeta");
+            const favoritos = leerFavoritos();
 
-            const categoria = document.createElement("p");
-            categoria.classList.add("articulos__categoria");
+            const articulosVisibles = soloFavoritos
+                ? articulos.filter(function (articulo) {
+                    return favoritos.includes(String(articulo.id));
+                })
+                : articulos;
 
-            const textoCategoria = document.createElement("strong");
-            textoCategoria.textContent = articulo.categoria;
-            categoria.append(textoCategoria);
+            articulosVisibles.forEach(function (articulo) {
+                const tarjeta = document.createElement("article");
+                tarjeta.classList.add("articulos__tarjeta");
 
-            tarjeta.append(categoria);
+                const categoria = document.createElement("p");
+                categoria.classList.add("articulos__categoria");
 
-            if (articulo.imagen) {
-                const imagen = document.createElement("img");
-                imagen.classList.add("articulos__imagen");
-                imagen.src = articulo.imagen;
-                imagen.alt = articulo.alt;
-                imagen.loading = "lazy";
+                const textoCategoria = document.createElement("strong");
+                textoCategoria.textContent = articulo.categoria;
+                categoria.append(textoCategoria);
 
-                tarjeta.append(imagen);
+                tarjeta.append(categoria);
+
+                if (articulo.imagen) {
+                    const imagen = document.createElement("img");
+                    imagen.classList.add("articulos__imagen");
+                    imagen.src = articulo.imagen;
+                    imagen.alt = articulo.alt;
+                    imagen.loading = "lazy";
+
+                    tarjeta.append(imagen);
+                } else {
+                    const portada = document.createElement("div");
+                    portada.classList.add("articulos__imagen-texto");
+                    portada.textContent = articulo.portada;
+
+                    tarjeta.append(portada);
+                }
+
+                const titulo = document.createElement("h3");
+                titulo.classList.add("articulos__titulo");
+                titulo.textContent = articulo.titulo;
+
+                const descripcion = document.createElement("p");
+                descripcion.textContent = articulo.descripcion;
+
+                const autor = document.createElement("small");
+                autor.textContent = articulo.autor;
+
+                const favorito = document.createElement("button");
+                favorito.type = "button";
+                favorito.classList.add("boton-favorito");
+                favorito.dataset.favorito = String(articulo.id);
+                favorito.setAttribute("aria-pressed", "false");
+                favorito.setAttribute("aria-label", "Guardar " + articulo.titulo);
+
+                const enlace = document.createElement("a");
+                enlace.classList.add("boton");
+                enlace.href = articulo.enlace;
+                enlace.textContent = "Leer artículo";
+
+                tarjeta.append(titulo, descripcion, autor, favorito, enlace);
+                lista.append(tarjeta);
+            });
+
+            actualizarFavoritos();
+
+            if (soloFavoritos) {
+                estado.textContent = articulosVisibles.length === 0
+                    ? "Todavía no tienes artículos favoritos. Guarda alguno desde Inicio o Artículos."
+                    : "";
             } else {
-                const portada = document.createElement("div");
-                portada.classList.add("articulos__imagen-texto");
-                portada.textContent = articulo.portada;
-
-                tarjeta.append(portada);
+                estado.textContent = articulosVisibles.length === 0
+                    ? "No hay artículos disponibles."
+                    : "";
             }
 
-            const titulo = document.createElement("h3");
-            titulo.classList.add("articulos__titulo");
-            titulo.textContent = articulo.titulo;
+            const buscador = document.getElementById("buscador-articulos");
 
-            const descripcion = document.createElement("p");
-            descripcion.textContent = articulo.descripcion;
+            if (buscador) {
+                buscador.dispatchEvent(new Event("input"));
+            }
+        }
 
-            const autor = document.createElement("small");
-            autor.textContent = articulo.autor;
+        mostrarArticulos();
 
-            const favorito = document.createElement("button");
-            favorito.type = "button";
-            favorito.classList.add("boton-favorito");
-            favorito.dataset.favorito = String(articulo.id);
-            favorito.setAttribute("aria-pressed", "false");
-            favorito.setAttribute("aria-label", "Guardar " + articulo.titulo);
-
-            const enlace = document.createElement("a");
-            enlace.classList.add("boton");
-            enlace.href = articulo.enlace;
-            enlace.textContent = "Leer artículo";
-
-            tarjeta.append(titulo, descripcion, autor, favorito, enlace);
-            lista.append(tarjeta);
-        });
-
-        actualizarFavoritos();
-
-        estado.textContent = articulos.length === 0 ? "No hay artículos disponibles." : "";
-
-        const buscador = document.getElementById("buscador-articulos");
-        buscador.dispatchEvent(new Event("input"));
+        if (soloFavoritos) {
+            document.addEventListener("favoritos-actualizados", mostrarArticulos);
+        }
 
     } catch (error) {
         console.error(error);
-        estado.textContent = "No se pudieron cargar los artículos.";
+
+        estado.textContent = soloFavoritos
+            ? "No se pudieron cargar tus favoritos."
+            : "No se pudieron cargar los artículos.";
     }
 }

@@ -1093,4 +1093,15 @@ body.tema-oscuro {
   .portada__contenido {
     transition: none;
   }
+/* Imágenes principales de los artículos */
+
+.lectura > img {
+    display: block;
+    width: 100%;
+    max-width: 760px;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    margin: 24px auto;
+    border-radius: 10px;
+}
 }

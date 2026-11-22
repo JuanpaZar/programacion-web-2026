@@ -39,16 +39,23 @@
     <section class="sugerencias">
       <p class="destacado">PARTICIPA</p>
       <h2>¿Sobre qué te gustaría leer?</h2>
-      <p>Si tienes algún tema que te gustaría ver en NODO, puedes proponerlo.</p>
+
+      <p>¿Hay algún tema del que te gustaría que habláramos?</p>
 
       <form id="form-sugerencias">
-        <label for="sugerencia-tema">Tu idea:</label>
-        <textarea id="sugerencia-tema" name="sugerencia" placeholder="Escribe el tema que te gustaría ver..." required></textarea>
-        <button class="boton" type="submit">Copiar sugerencia</button>
-        <p id="mensaje-sugerencia"></p>
-      </form>
+        <label for="sugerencia-tema">Tu propuesta</label>
 
-      <small>Por ahora puedes copiar tu propuesta. Todavía no hay un sistema para enviarla directamente al blog.</small>
+        <textarea
+          id="sugerencia-tema"
+          name="sugerencia"
+          placeholder="Escribe tu idea..."
+          required
+        ></textarea>
+
+        <button class="boton" type="submit">Enviar propuesta</button>
+
+        <p id="mensaje-sugerencia" role="status" aria-live="polite"></p>
+      </form>
     </section>
 
   </main>

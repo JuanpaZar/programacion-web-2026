@@ -27,6 +27,82 @@
   <meta name="twitter:title" content="NODO | Blog - Condiciones materiales">
   <meta name="twitter:description" content="NODO es un blog sobre problemas sociales contemporaneos, redes sociales, algoritmos y condiciones materiales.">
   <meta name="twitter:image" content="https://juanpazar.github.io/programacion-web-2026/assets/img/portada-soledad.jpg">
+
+  <style>
+    .encabezado--inicio {
+      min-height: auto;
+      padding-bottom: 24px;
+    }
+
+    .bienvenida.bienvenida--limpia {
+      min-height: auto;
+      padding: 48px 20px 65px;
+      text-align: center;
+    }
+
+    .bienvenida--limpia h2 {
+      max-width: 780px;
+      margin: 0 auto 20px;
+      font-size: clamp(32px, 4.5vw, 56px);
+      line-height: 1.15;
+    }
+
+    .bienvenida--limpia .bienvenida__texto {
+      max-width: 600px;
+      margin: 0 auto 28px;
+      font-size: 17px;
+      line-height: 1.65;
+    }
+
+    .bienvenida--limpia .bienvenida__enlaces {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    @media (max-width: 600px) {
+      .encabezado--inicio {
+        padding-top: 75px;
+        padding-bottom: 18px;
+      }
+
+      .encabezado--inicio h1 {
+        font-size: 36px;
+        margin-bottom: 5px;
+      }
+
+      .encabezado--inicio .encabezado__descripcion {
+        font-size: 13px;
+        margin-bottom: 0;
+      }
+
+      .bienvenida.bienvenida--limpia {
+        padding: 28px 12px 45px;
+      }
+
+      .bienvenida--limpia h2 {
+        font-size: clamp(30px, 8vw, 38px);
+        line-height: 1.18;
+        margin-bottom: 18px;
+      }
+
+      .bienvenida--limpia .bienvenida__texto {
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 24px;
+      }
+
+      .bienvenida--limpia .bienvenida__enlaces {
+        gap: 10px;
+      }
+
+      .bienvenida--limpia .bienvenida__enlaces .boton {
+        font-size: 14px;
+      }
+    }
+  </style>
 </head>
 
 <body class="layout tema-oscuro">
@@ -70,14 +146,12 @@
 
   <main class="contenido">
 
-    <section class="bienvenida">
-      <p class="destacado">NODO / BLOG EDITORIAL</p>
+    <section class="bienvenida bienvenida--limpia">
 
       <h2>Problemas sociales no muy hablados</h2>
 
       <p class="bienvenida__texto">
-        Una pagina para leer y reflexionar mas acerca de la mente humana 
-        y las condiciones materiales que forjan nuestra vida y nuestro ser
+        Sociedad, tecnología y las condiciones que moldean nuestra vida.
       </p>
 
       <div class="bienvenida__enlaces">
@@ -85,7 +159,6 @@
         <a class="boton bienvenida__boton-secundario" href="pages/sobre-mi.html">Sobre NODO</a>
       </div>
 
-      <p class="bienvenida__temas">SOCIEDAD · TECNOLOGÍA · MEMORIA -->  OPINIÓN</p>
     </section>
 
     <hr>
@@ -228,6 +301,30 @@
           <a class="boton" href="articulos/esclavos-de-la-nostalgia.html">Leer artículo</a>
         </article>
 
+        <article class="articulos__tarjeta" hidden>
+          <p class="articulos__categoria">
+            <strong>SOCIEDAD</strong>
+          </p>
+          <img class="articulos__imagen" src="assets/img/capital-humano.jpg" alt="Trabajador sentado solo después de una jornada laboral" width="300" height="200" loading="lazy">
+          <h3 class="articulos__titulo">Capital humano</h3>
+          <p>Cuando las ganancias importan más que las personas, incluso una vida de esfuerzo puede parecer reemplazable.</p>
+          <small>Juan Pablo Zamora Romero</small>
+          <button type="button" class="boton-favorito" data-favorito="9" aria-pressed="false" aria-label="Guardar Capital humano">♡ Guardar</button>
+          <a class="boton" href="articulos/capital-humano.html">Leer artículo</a>
+        </article>
+
+        <article class="articulos__tarjeta" hidden>
+          <p class="articulos__categoria">
+            <strong>SOCIEDAD</strong>
+          </p>
+          <img class="articulos__imagen" src="assets/img/reemplazados-ia.jpg" alt="Imagen sobre el impacto de la inteligencia artificial en el trabajo humano" width="300" height="200" loading="lazy">
+          <h3 class="articulos__titulo">¿Vale la pena ser reemplazados por la IA?</h3>
+          <p>La tecnología avanza, pero ¿estamos construyendo un futuro mejor para las personas o solamente uno más rentable?</p>
+          <small>Juan Pablo Zamora Romero</small>
+          <button type="button" class="boton-favorito" data-favorito="10" aria-pressed="false" aria-label="Guardar ¿Vale la pena ser reemplazados por la IA?">♡ Guardar</button>
+          <a class="boton" href="articulos/vale-la-pena-ser-reemplazados-por-la-ia.html">Leer artículo</a>
+        </article>
+
       </div>
 
       <p class="articulos__ver-todos">
@@ -267,6 +364,7 @@
     </section>
 
     <hr>
+
   </main>
 
   <footer class="pie">

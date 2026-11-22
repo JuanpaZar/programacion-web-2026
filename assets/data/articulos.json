@@ -78,5 +78,25 @@
     "imagen": "../assets/img/nostalgia.jpg",
     "alt": "Imagen melancólica que evoca recuerdos del pasado",
     "enlace": "../articulos/esclavos-de-la-nostalgia.html"
+  },
+  {
+    "id": 9,
+    "categoria": "SOCIEDAD",
+    "titulo": "Capital humano",
+    "descripcion": "Cuando las ganancias importan más que las personas, incluso una vida de esfuerzo puede parecer reemplazable.",
+    "autor": "Juan Pablo Zamora Romero",
+    "imagen": "../assets/img/capital-humano.jpg",
+    "alt": "Trabajador sentado solo después de una jornada laboral",
+    "enlace": "../articulos/capital-humano.html"
+  },
+  {
+    "id": 10,
+    "categoria": "SOCIEDAD",
+    "titulo": "¿Vale la pena ser reemplazados por la IA?",
+    "descripcion": "La tecnología avanza, pero ¿estamos construyendo un futuro mejor para las personas o solamente uno más rentable?",
+    "autor": "Juan Pablo Zamora Romero",
+    "imagen": "../assets/img/reemplazados-ia.jpg",
+    "alt": "Imagen sobre el impacto de la inteligencia artificial en el trabajo humano",
+    "enlace": "../articulos/vale-la-pena-ser-reemplazados-por-la-ia.html"
   }
 ]

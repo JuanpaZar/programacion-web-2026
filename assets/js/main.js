@@ -4,6 +4,7 @@ import { iniciarFavoritos } from "./favoritos.js";
 import { iniciarMenu } from "./menu.js";
 import { iniciarPerfil } from "./perfil.js";
 import { iniciarReacciones } from "./reacciones.js";
+import { iniciarPortada } from "./portada.js";
 
 iniciarMenu();
 
@@ -56,7 +57,9 @@ function filtrarArticulos() {
     tarjetas.forEach(function (tarjeta, indice) {
         const contenido = tarjeta.textContent.toLowerCase();
         const coincide = contenido.includes(texto);
-        const mostrar = coincide && (texto !== "" || mostrarTodos || indice < 4 || !botonVerMas);
+
+        const mostrar = coincide &&
+            (texto !== "" || mostrarTodos || indice < 4 || !botonVerMas);
 
         tarjeta.hidden = !mostrar;
 
@@ -68,13 +71,17 @@ function filtrarArticulos() {
     const estado = document.getElementById("estado-articulos");
 
     if (estado && tarjetas.length > 0) {
-        estado.textContent = encontrados === 0 ? "No se encontraron artículos." : "";
+        estado.textContent = encontrados === 0
+            ? "No se encontraron artículos."
+            : "";
     }
 
     const estadoBusqueda = document.getElementById("estado-busqueda");
 
     if (estadoBusqueda) {
-        estadoBusqueda.textContent = texto !== "" && encontrados === 0 ? "No se encontraron artículos." : "";
+        estadoBusqueda.textContent = texto !== "" && encontrados === 0
+            ? "No se encontraron artículos."
+            : "";
     }
 
     if (botonVerMas) {
@@ -92,7 +99,10 @@ if (botonVerMas) {
     botonVerMas.addEventListener("click", function () {
         mostrarTodos = !mostrarTodos;
 
-        botonVerMas.textContent = mostrarTodos ? "Ver menos artículos" : "Ver más artículos";
+        botonVerMas.textContent = mostrarTodos
+            ? "Ver menos artículos"
+            : "Ver más artículos";
+
         botonVerMas.setAttribute("aria-expanded", String(mostrarTodos));
 
         filtrarArticulos();
@@ -108,22 +118,33 @@ if (formSugerencias) {
 
         const sugerencia = document.getElementById("sugerencia-tema");
         const mensaje = document.getElementById("mensaje-sugerencia");
+        const texto = sugerencia.value.trim();
 
-        if (sugerencia.value.trim() === "") {
-            mensaje.textContent = "Escribe una sugerencia.";
+        if (texto === "") {
+            mensaje.textContent = "Escribe tu idea.";
             return;
         }
 
-        sugerencia.select();
+        try {
+            const clave = "nodo_sugerencias";
+            let propuestas = [];
 
-        if (navigator.clipboard) {
-            navigator.clipboard.writeText(sugerencia.value).then(function () {
-                mensaje.textContent = "Sugerencia copiada.";
-            }).catch(function () {
-                mensaje.textContent = "Presiona Ctrl+C para copiar.";
-            });
-        } else {
-            mensaje.textContent = "Presiona Ctrl+C para copiar.";
+            const guardadas = JSON.parse(localStorage.getItem(clave));
+
+            if (Array.isArray(guardadas)) {
+                propuestas = guardadas;
+            }
+
+            propuestas.push(texto);
+
+            localStorage.setItem(clave, JSON.stringify(propuestas));
+
+            mensaje.textContent = "Propuesta guardada.";
+            formSugerencias.reset();
+
+        } catch (error) {
+            console.error("No se pudo guardar la propuesta", error);
+            mensaje.textContent = "No se pudo guardar la propuesta.";
         }
     });
 }
@@ -134,3 +155,4 @@ iniciarFavoritos();
 iniciarArticulos();
 iniciarPerfil();
 iniciarReacciones();
+iniciarPortada();

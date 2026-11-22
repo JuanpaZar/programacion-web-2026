@@ -39,6 +39,9 @@
 
   --color-encabezado: #ECEFF4;
   --color-menu: #F4F6F8;
+  --color-tarjeta: #FFFFFF;
+  --color-texto-tarjeta: #2E3440;
+  --color-borde-tarjeta: #D5DDE2;
 
   --color-boton: #5B9EAF;
   --color-boton-hover: #3B7F91;
@@ -63,6 +66,9 @@
 
     --color-encabezado: #3B4252;
     --color-menu: #3B4252;
+    --color-tarjeta: #3B4252;
+    --color-texto-tarjeta: #ECEFF4;
+    --color-borde-tarjeta: #617787;
 
     --color-boton: #88C0D0;
     --color-boton-hover: #A5D5E2;
@@ -247,26 +253,28 @@ h3 {
   max-width: 300px;
   min-width: 0;
   padding: var(--espaciado);
-  background-color: var(--color-secundario);
-  color: var(--color-texto-inverso);
-  border: 1px solid var(--color-acento);
+  background-color: var(--color-tarjeta);
+  color: var(--color-texto-tarjeta);
+  border: 1px solid var(--color-borde-tarjeta);
   border-radius: var(--radio-borde);
   text-align: left;
-  transition: transform 0.3s ease;
+  transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 
   &:hover {
     border-color: var(--color-acento);
-    transform: translateY(-5px);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
   }
 
   p {
-    color: var(--color-texto-inverso);
+    color: var(--color-texto-tarjeta);
   }
 
   small {
     margin-top: auto;
     padding-top: var(--espaciado-s);
-    color: var(--color-texto-inverso);
+    color: var(--color-texto-tarjeta);
+    opacity: 0.8;
   }
 }
 
@@ -453,13 +461,13 @@ h3 {
 }
 
 .tema__boton {
-  background-color: #3B4252;
-  color: #FFFFFF;
+  background-color: transparent;
+  color: var(--color-texto);
 }
 
 .tema__boton:hover {
-  background-color: #2E3440;
-  color: #FFFFFF;
+  background-color: var(--color-acento);
+  color: var(--color-texto-boton);
 }
 
 
@@ -476,6 +484,9 @@ body.tema-claro {
 
   --color-encabezado: #ECEFF4;
   --color-menu: #F4F6F8;
+  --color-tarjeta: #FFFFFF;
+  --color-texto-tarjeta: #2E3440;
+  --color-borde-tarjeta: #D5DDE2;
 
   --color-boton: #5B9EAF;
   --color-boton-hover: #3B7F91;
@@ -494,6 +505,9 @@ body.tema-oscuro {
 
   --color-encabezado: #3B4252;
   --color-menu: #3B4252;
+  --color-tarjeta: #3B4252;
+  --color-texto-tarjeta: #ECEFF4;
+  --color-borde-tarjeta: #617787;
 
   --color-boton: #88C0D0;
   --color-boton-hover: #A5D5E2;
@@ -916,9 +930,9 @@ body.tema-oscuro {
   align-items: center;
   gap: 35px;
   padding: 25px;
-  background-color: var(--color-secundario);
-  color: var(--color-texto-inverso);
-  border: 1px solid var(--color-acento);
+  background-color: var(--color-tarjeta);
+  color: var(--color-texto-tarjeta);
+  border: 1px solid var(--color-borde-tarjeta);
   border-radius: var(--radio-borde);
 }
 
@@ -1093,15 +1107,94 @@ body.tema-oscuro {
   .portada__contenido {
     transition: none;
   }
-/* Imágenes principales de los artículos */
-
-.lectura > img {
-    display: block;
-    width: 100%;
-    max-width: 760px;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    margin: 24px auto;
-    border-radius: 10px;
 }
+
+
+/*
+   23. AJUSTES DE TIPOGRAFÍA Y NAVEGACIÓN
+ */
+
+/* Serif editorial únicamente para el título de bienvenida */
+.bienvenida h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* Enlaces y botones del menú con la misma apariencia */
+.menu__lista .menu__enlace,
+.menu__lista .tema__boton {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 9px 12px;
+  background-color: transparent;
+  color: var(--color-texto);
+  border: 1px solid transparent;
+  border-radius: var(--radio-borde);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-decoration: none;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.25s ease, color 0.25s ease,
+              transform 0.25s ease, border-color 0.25s ease;
+}
+
+.menu__lista .menu__enlace:hover,
+.menu__lista .tema__boton:hover {
+  background-color: var(--color-acento);
+  color: var(--color-texto-boton);
+  border-color: var(--color-acento);
+  transform: translateX(3px);
+}
+
+.menu__lista .menu__enlace:focus-visible,
+.menu__lista .tema__boton:focus-visible {
+  outline: 2px solid var(--color-acento);
+  outline-offset: 2px;
+}
+
+.menu__lista .menu__item[hidden] {
+  display: none !important;
+}
+
+/* Botón Guardar legible tanto en tarjetas claras como oscuras */
+.articulos__tarjeta .boton-favorito {
+  color: var(--color-texto-tarjeta);
+}
+
+.articulos__tarjeta .boton-favorito.activo {
+  color: #D65A70;
+}
+
+/* Fotografías de artículos: tamaño controlado, sin afectar tarjetas */
+.lectura > img {
+  display: block;
+  width: 100%;
+  max-width: 620px;
+  height: auto;
+  max-height: 320px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  margin: 24px auto;
+  border-radius: var(--radio-borde);
+}
+
+@media (max-width: 600px) {
+  .bienvenida h2 {
+    font-size: clamp(1.8rem, 7.5vw, 2.4rem);
+    line-height: 1.2;
+    letter-spacing: -0.3px;
+  }
+  .menu__lista .menu__enlace,
+  .menu__lista .tema__boton {
+    font-size: 0.9rem;
+    padding: 10px 12px;
+  }
+  .lectura > img {
+    max-height: 230px;
+  }
 }

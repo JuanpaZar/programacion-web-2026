@@ -43,10 +43,12 @@ export function iniciarFormulario() {
 
         guardarPerfilLocal(datos.nombre);
 
+        const ingles = localStorage.getItem("nodo_idioma") === "en";
+
         Swal.fire({
             icon: "success",
-            title: "Cuenta creada.",
-            confirmButtonText: "Aceptar"
+            title: ingles ? "Account created." : "Cuenta creada.",
+            confirmButtonText: ingles ? "Continue" : "Aceptar"
         }).then(function () {
             formulario.reset();
             window.location.href = "../index.html";

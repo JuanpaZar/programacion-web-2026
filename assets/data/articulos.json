@@ -7,7 +7,11 @@
     "autor": "Juan Pablo Zamora Romero",
     "imagen": "../assets/img/soledad.jpg",
     "alt": "Persona sola en un momento de reflexión",
-    "enlace": "../articulos/pandemia-soledad.html"
+    "enlace": "../articulos/pandemia-soledad.html",
+    "titulo_en": "The Loneliness Pandemic",
+    "categoria_en": "Loneliness",
+    "descripcion_en": "More connected than ever, yet so much of it lives behind a screen.",
+    "alt_en": "A person alone in a quiet moment of reflection"
   },
   {
     "id": 2,
@@ -17,7 +21,11 @@
     "autor": "Juan Pablo Zamora Romero",
     "imagen": "../assets/img/algoritmos.jpg",
     "alt": "Marioneta controlada mediante hilos",
-    "enlace": "../articulos/no-son-tus-ideas.html"
+    "enlace": "../articulos/no-son-tus-ideas.html",
+    "titulo_en": "These Aren’t Your Ideas",
+    "categoria_en": "Algorithms",
+    "descripcion_en": "Question where your ideas came from—and who placed them there.",
+    "alt_en": "A puppet suspended from strings"
   },
   {
     "id": 3,
@@ -27,7 +35,11 @@
     "autor": "Juan Pablo Zamora Romero",
     "imagen": "../assets/img/redes-sociales.jpg",
     "alt": "Persona absorta utilizando su teléfono",
-    "enlace": "../articulos/scroll-infinito.html"
+    "enlace": "../articulos/scroll-infinito.html",
+    "titulo_en": "Endless Scrolling, Real Emptiness",
+    "categoria_en": "Social Media",
+    "descripcion_en": "They are reshaping what we want.",
+    "alt_en": "Someone absorbed in their phone"
   },
   {
     "id": 4,
@@ -37,7 +49,11 @@
     "autor": "Juan Pablo Zamora Romero",
     "imagen": "../assets/img/materialismo.jpg",
     "alt": "Escena relacionada con desigualdad y explotación social",
-    "enlace": "../articulos/modelos-politicos.html"
+    "enlace": "../articulos/modelos-politicos.html",
+    "titulo_en": "Political Models",
+    "categoria_en": "Material Conditions",
+    "descripcion_en": "The world economy.",
+    "alt_en": "An image evoking inequality and social exploitation"
   },
   {
     "id": 5,
@@ -47,7 +63,11 @@
     "autor": "Juan Pablo Zamora Romero",
     "imagen": "../assets/img/concentracion.jpg",
     "alt": "Persona intentando concentrarse mientras utiliza su teléfono",
-    "enlace": "../articulos/concentracion.html"
+    "enlace": "../articulos/concentracion.html",
+    "titulo_en": "We Can’t Focus Anymore",
+    "categoria_en": "Attention",
+    "descripcion_en": "Even when we want to be present, staying there feels difficult.",
+    "alt_en": "Someone struggling to concentrate while using their phone"
   },
   {
     "id": 6,
@@ -57,7 +77,11 @@
     "autor": "Juan Pablo Zamora Romero",
     "imagen": "../assets/img/noticias.jpg",
     "alt": "Persona preocupada mientras lee noticias en su teléfono",
-    "enlace": "../articulos/peso-de-estar-informado.html"
+    "enlace": "../articulos/peso-de-estar-informado.html",
+    "titulo_en": "The Weight of Being Informed",
+    "categoria_en": "Current Affairs",
+    "descripcion_en": "When the news stops informing us and starts wearing us down.",
+    "alt_en": "Someone reading troubling news on their phone"
   },
   {
     "id": 7,
@@ -67,7 +91,11 @@
     "autor": "Juan Pablo Zamora Romero",
     "imagen": "../assets/img/salud-mental.jpg",
     "alt": "Persona agotada por sus responsabilidades diarias",
-    "enlace": "../articulos/cuanto-cuesta-estar-bien.html"
+    "enlace": "../articulos/cuanto-cuesta-estar-bien.html",
+    "titulo_en": "What Does It Cost to Be Okay?",
+    "categoria_en": "Mental Health",
+    "descripcion_en": "Taking care of our minds matters. So does paying the bills.",
+    "alt_en": "Someone exhausted by everyday responsibilities"
   },
   {
     "id": 8,
@@ -77,7 +105,11 @@
     "autor": "Juan Pablo Zamora Romero",
     "imagen": "../assets/img/nostalgia.jpg",
     "alt": "Imagen melancólica que evoca recuerdos del pasado",
-    "enlace": "../articulos/esclavos-de-la-nostalgia.html"
+    "enlace": "../articulos/esclavos-de-la-nostalgia.html",
+    "titulo_en": "Prisoners of Nostalgia",
+    "categoria_en": "Memory",
+    "descripcion_en": "Sometimes we miss the past so much that we stop living in the present.",
+    "alt_en": "A wistful image that brings old memories to mind"
   },
   {
     "id": 9,
@@ -87,7 +119,11 @@
     "autor": "Juan Pablo Zamora Romero",
     "imagen": "../assets/img/capital-humano.jpg",
     "alt": "Trabajador sentado solo después de una jornada laboral",
-    "enlace": "../articulos/capital-humano.html"
+    "enlace": "../articulos/capital-humano.html",
+    "titulo_en": "Human Capital",
+    "categoria_en": "Society",
+    "descripcion_en": "When profit matters more than people, even a lifetime of work can seem replaceable.",
+    "alt_en": "A worker sitting alone after a long day"
   },
   {
     "id": 10,
@@ -97,6 +133,10 @@
     "autor": "Juan Pablo Zamora Romero",
     "imagen": "../assets/img/reemplazados-ia.jpg",
     "alt": "Imagen sobre el impacto de la inteligencia artificial en el trabajo humano",
-    "enlace": "../articulos/vale-la-pena-ser-reemplazados-por-la-ia.html"
+    "enlace": "../articulos/vale-la-pena-ser-reemplazados-por-la-ia.html",
+    "titulo_en": "Is It Worth Being Replaced by AI?",
+    "categoria_en": "Society",
+    "descripcion_en": "Technology moves forward. But are we building a better future for people—or simply a more profitable one?",
+    "alt_en": "An image about artificial intelligence and human work"
   }
 ]

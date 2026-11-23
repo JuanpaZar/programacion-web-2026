@@ -1,3 +1,4 @@
+import { iniciarIdioma } from "./idioma.js";
 import { iniciarFormulario } from "./formulario.js";
 import { iniciarArticulos } from "./articulos.js";
 import { iniciarFavoritos } from "./favoritos.js";
@@ -156,3 +157,5 @@ iniciarArticulos();
 iniciarPerfil();
 iniciarReacciones();
 iniciarPortada();
+// Traducción ES / EN de la interfaz y los artículos.
+iniciarIdioma();

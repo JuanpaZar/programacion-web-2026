@@ -29,6 +29,8 @@
   <meta name="twitter:image" content="https://juanpazar.github.io/programacion-web-2026/assets/img/portada-soledad.jpg">
 
   <style>
+    /* Ajustes exclusivos del inicio */
+
     .encabezado--inicio {
       min-height: auto;
       padding-bottom: 24px;
@@ -148,7 +150,7 @@
 
     <section class="bienvenida bienvenida--limpia">
 
-      <h2>Problemas sociales no muy hablados</h2>
+      <h2>Lo que vale la pena cuestionar</h2>
 
       <p class="bienvenida__texto">
         Sociedad, tecnología y las condiciones que moldean nuestra vida.
@@ -196,12 +198,6 @@
       <p class="destacado">EXPLORAR</p>
       <h2>Artículos recientes</h2>
       <p>Ideas sobre lo que vivimos, pensamos y pocas veces cuestionamos.</p>
-
-      <div class="buscador">
-        <input type="search" id="buscador-articulos" placeholder="Buscar artículos..." aria-label="Buscar artículos">
-      </div>
-
-      <p id="estado-busqueda" role="status" aria-live="polite"></p>
 
       <div class="articulos__lista" id="lista-inicio">
 
@@ -253,83 +249,7 @@
           <a class="boton" href="articulos/modelos-politicos.html">Leer artículo</a>
         </article>
 
-        <article class="articulos__tarjeta" hidden>
-          <p class="articulos__categoria">
-            <strong>ATENCIÓN</strong>
-          </p>
-          <img class="articulos__imagen" src="assets/img/concentracion.jpg" alt="Persona intentando concentrarse mientras utiliza su teléfono" width="300" height="200" loading="lazy">
-          <h3 class="articulos__titulo">Ya no sabemos concentrarnos</h3>
-          <p>Nos cuesta estar presentes incluso cuando queremos hacerlo.</p>
-          <small>Juan Pablo Zamora Romero</small>
-          <button type="button" class="boton-favorito" data-favorito="5" aria-pressed="false" aria-label="Guardar Ya no sabemos concentrarnos">♡ Guardar</button>
-          <a class="boton" href="articulos/concentracion.html">Leer artículo</a>
-        </article>
-
-        <article class="articulos__tarjeta" hidden>
-          <p class="articulos__categoria">
-            <strong>ACTUALIDAD</strong>
-          </p>
-          <img class="articulos__imagen" src="assets/img/noticias.jpg" alt="Persona preocupada mientras lee noticias en su teléfono" width="300" height="200" loading="lazy">
-          <h3 class="articulos__titulo">El peso de estar informado</h3>
-          <p>Cuando las noticias dejan de informar y empiezan a agotarnos.</p>
-          <small>Juan Pablo Zamora Romero</small>
-          <button type="button" class="boton-favorito" data-favorito="6" aria-pressed="false" aria-label="Guardar El peso de estar informado">♡ Guardar</button>
-          <a class="boton" href="articulos/peso-de-estar-informado.html">Leer artículo</a>
-        </article>
-
-        <article class="articulos__tarjeta" hidden>
-          <p class="articulos__categoria">
-            <strong>SALUD MENTAL</strong>
-          </p>
-          <img class="articulos__imagen" src="assets/img/salud-mental.jpg" alt="Persona agotada por sus responsabilidades diarias" width="300" height="200" loading="lazy">
-          <h3 class="articulos__titulo">¿Cuánto cuesta estar bien?</h3>
-          <p>Cuidar nuestra salud mental es importante, pero también hay que pagar las cuentas.</p>
-          <small>Juan Pablo Zamora Romero</small>
-          <button type="button" class="boton-favorito" data-favorito="7" aria-pressed="false" aria-label="Guardar ¿Cuánto cuesta estar bien?">♡ Guardar</button>
-          <a class="boton" href="articulos/cuanto-cuesta-estar-bien.html">Leer artículo</a>
-        </article>
-
-        <article class="articulos__tarjeta" hidden>
-          <p class="articulos__categoria">
-            <strong>MEMORIA</strong>
-          </p>
-          <img class="articulos__imagen" src="assets/img/nostalgia.jpg" alt="Imagen melancólica que evoca recuerdos del pasado" width="300" height="200" loading="lazy">
-          <h3 class="articulos__titulo">Esclavos de la nostalgia</h3>
-          <p>A veces extrañamos tanto el pasado que dejamos de vivir nuestro presente.</p>
-          <small>Juan Pablo Zamora Romero</small>
-          <button type="button" class="boton-favorito" data-favorito="8" aria-pressed="false" aria-label="Guardar Esclavos de la nostalgia">♡ Guardar</button>
-          <a class="boton" href="articulos/esclavos-de-la-nostalgia.html">Leer artículo</a>
-        </article>
-
-        <article class="articulos__tarjeta" hidden>
-          <p class="articulos__categoria">
-            <strong>SOCIEDAD</strong>
-          </p>
-          <img class="articulos__imagen" src="assets/img/capital-humano.jpg" alt="Trabajador sentado solo después de una jornada laboral" width="300" height="200" loading="lazy">
-          <h3 class="articulos__titulo">Capital humano</h3>
-          <p>Cuando las ganancias importan más que las personas, incluso una vida de esfuerzo puede parecer reemplazable.</p>
-          <small>Juan Pablo Zamora Romero</small>
-          <button type="button" class="boton-favorito" data-favorito="9" aria-pressed="false" aria-label="Guardar Capital humano">♡ Guardar</button>
-          <a class="boton" href="articulos/capital-humano.html">Leer artículo</a>
-        </article>
-
-        <article class="articulos__tarjeta" hidden>
-          <p class="articulos__categoria">
-            <strong>SOCIEDAD</strong>
-          </p>
-          <img class="articulos__imagen" src="assets/img/reemplazados-ia.jpg" alt="Imagen sobre el impacto de la inteligencia artificial en el trabajo humano" width="300" height="200" loading="lazy">
-          <h3 class="articulos__titulo">¿Vale la pena ser reemplazados por la IA?</h3>
-          <p>La tecnología avanza, pero ¿estamos construyendo un futuro mejor para las personas o solamente uno más rentable?</p>
-          <small>Juan Pablo Zamora Romero</small>
-          <button type="button" class="boton-favorito" data-favorito="10" aria-pressed="false" aria-label="Guardar ¿Vale la pena ser reemplazados por la IA?">♡ Guardar</button>
-          <a class="boton" href="articulos/vale-la-pena-ser-reemplazados-por-la-ia.html">Leer artículo</a>
-        </article>
-
       </div>
-
-      <p class="articulos__ver-todos">
-        <button type="button" class="boton" id="boton-ver-mas" aria-expanded="false" aria-controls="lista-inicio">Ver más artículos</button>
-      </p>
 
       <p class="articulos__ver-todos">
         <a class="boton" href="pages/articulos.html">Ver todos los artículos</a>

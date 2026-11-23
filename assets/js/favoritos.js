@@ -24,13 +24,15 @@ export function solicitarRegistro() {
     const script = document.querySelector('script[src$="assets/js/main.js"]');
     const rutaBase = script && script.getAttribute("src").startsWith("../") ? "../" : "";
 
+    const ingles = localStorage.getItem("nodo_idioma") === "en";
+
     Swal.fire({
         icon: "info",
-        title: "Necesitas registrarte",
-        text: "Crea un perfil para guardar artículos y reaccionar a las publicaciones.",
+        title: ingles ? "Sign Up to Continue" : "Necesitas registrarte",
+        text: ingles ? "Create a profile to save articles and react to posts." : "Crea un perfil para guardar artículos y reaccionar a las publicaciones.",
         showCancelButton: true,
-        confirmButtonText: "Registrarme",
-        cancelButtonText: "Cancelar"
+        confirmButtonText: ingles ? "Sign Up" : "Registrarme",
+        cancelButtonText: ingles ? "Cancel" : "Cancelar"
     }).then(function (resultado) {
         if (resultado.isConfirmed) {
             window.location.href = rutaBase + "pages/registro.html";

@@ -1,4 +1,5 @@
 import { iniciarIdioma } from "./idioma.js";
+import { iniciarPropuestas } from "./propuestas.js";
 import { iniciarFormulario } from "./formulario.js";
 import { iniciarArticulos } from "./articulos.js";
 import { iniciarFavoritos } from "./favoritos.js";
@@ -8,7 +9,6 @@ import { iniciarReacciones } from "./reacciones.js";
 import { iniciarPortada } from "./portada.js";
 
 iniciarMenu();
-
 
 const botonTema = document.getElementById("boton-tema");
 
@@ -24,7 +24,10 @@ try {
 }
 
 if (botonTema) {
-    botonTema.setAttribute("aria-pressed", String(document.body.classList.contains("tema-oscuro")));
+    botonTema.setAttribute(
+        "aria-pressed",
+        String(document.body.classList.contains("tema-oscuro"))
+    );
 
     botonTema.addEventListener("click", function () {
         const modoOscuro = document.body.classList.toggle("tema-oscuro");
@@ -33,13 +36,15 @@ if (botonTema) {
         botonTema.setAttribute("aria-pressed", String(modoOscuro));
 
         try {
-            localStorage.setItem("nodo_tema", JSON.stringify(modoOscuro ? "oscuro" : "claro"));
+            localStorage.setItem(
+                "nodo_tema",
+                JSON.stringify(modoOscuro ? "oscuro" : "claro")
+            );
         } catch (error) {
             console.error("No se pudo guardar el tema", error);
         }
     });
 }
-
 
 const buscador = document.getElementById("buscador-articulos");
 const botonVerMas = document.getElementById("boton-ver-mas");
@@ -47,9 +52,7 @@ const botonVerMas = document.getElementById("boton-ver-mas");
 let mostrarTodos = false;
 
 function filtrarArticulos() {
-    if (!buscador) {
-        return;
-    }
+    if (!buscador) return;
 
     const texto = buscador.value.trim().toLowerCase();
     const tarjetas = document.querySelectorAll(".articulos__tarjeta");
@@ -90,11 +93,9 @@ function filtrarArticulos() {
     }
 }
 
-
 if (buscador) {
     buscador.addEventListener("input", filtrarArticulos);
 }
-
 
 if (botonVerMas) {
     botonVerMas.addEventListener("click", function () {
@@ -110,52 +111,11 @@ if (botonVerMas) {
     });
 }
 
-
-const formSugerencias = document.getElementById("form-sugerencias");
-
-if (formSugerencias) {
-    formSugerencias.addEventListener("submit", function (e) {
-        e.preventDefault();
-
-        const sugerencia = document.getElementById("sugerencia-tema");
-        const mensaje = document.getElementById("mensaje-sugerencia");
-        const texto = sugerencia.value.trim();
-
-        if (texto === "") {
-            mensaje.textContent = "Escribe tu idea.";
-            return;
-        }
-
-        try {
-            const clave = "nodo_sugerencias";
-            let propuestas = [];
-
-            const guardadas = JSON.parse(localStorage.getItem(clave));
-
-            if (Array.isArray(guardadas)) {
-                propuestas = guardadas;
-            }
-
-            propuestas.push(texto);
-
-            localStorage.setItem(clave, JSON.stringify(propuestas));
-
-            mensaje.textContent = "Propuesta guardada.";
-            formSugerencias.reset();
-
-        } catch (error) {
-            console.error("No se pudo guardar la propuesta", error);
-            mensaje.textContent = "No se pudo guardar la propuesta.";
-        }
-    });
-}
-
-
 iniciarFormulario();
 iniciarFavoritos();
 iniciarArticulos();
 iniciarPerfil();
 iniciarReacciones();
 iniciarPortada();
-// Traducción ES / EN de la interfaz y los artículos.
+iniciarPropuestas();
 iniciarIdioma();

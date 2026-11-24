@@ -1,0 +1,20 @@
+[
+    {
+        "id": 4,
+        "tema": "El impacto de las redes sociales",
+        "descripcion": "Cómo las redes sociales afectan la manera en que nos relacionamos con otras personas.",
+        "fecha": "2026-11-24"
+    },
+    {
+        "id": 5,
+        "tema": "Creyendo que pensamos",
+        "descripcion": "Como las redes sociales nos vuelven radicales",
+        "fecha": "2026-11-24"
+    },
+    {
+        "id": 6,
+        "tema": "prueba",
+        "descripcion": "prueba 202",
+        "fecha": "2026-11-24"
+    }
+]

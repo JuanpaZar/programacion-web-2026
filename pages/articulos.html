@@ -24,14 +24,17 @@
       <p>Opiniones sobre cosas que vivimos, normalizamos y pocas veces cuestionamos.</p>
 
       <div class="buscador">
-        <input type="search" id="buscador-articulos" placeholder="Buscar artículos..." aria-label="Buscar artículos">
+        <input
+          type="search"
+          id="buscador-articulos"
+          placeholder="Buscar artículos..."
+          aria-label="Buscar artículos"
+        >
       </div>
 
       <p id="estado-articulos" role="status" aria-live="polite">Cargando artículos...</p>
 
-      <div class="articulos__lista" id="lista-articulos">
-
-      </div>
+      <div class="articulos__lista" id="lista-articulos"></div>
     </section>
 
     <hr>
@@ -42,12 +45,25 @@
 
       <p>¿Hay algún tema del que te gustaría que habláramos?</p>
 
-      <form id="form-sugerencias">
-        <label for="sugerencia-tema">Tu propuesta</label>
+      <form id="form-sugerencias" novalidate>
 
+        <label for="propuesta-tema">Tema</label>
+        <input
+          id="propuesta-tema"
+          name="tema"
+          type="text"
+          minlength="3"
+          maxlength="80"
+          placeholder="Ej. El costo de la vivienda"
+          required
+        >
+
+        <label for="sugerencia-tema">Tu propuesta</label>
         <textarea
           id="sugerencia-tema"
-          name="sugerencia"
+          name="descripcion"
+          minlength="10"
+          maxlength="500"
           placeholder="Escribe tu idea..."
           required
         ></textarea>
@@ -56,6 +72,12 @@
 
         <p id="mensaje-sugerencia" role="status" aria-live="polite"></p>
       </form>
+
+      <h2 id="titulo-propuestas">Propuestas de la comunidad</h2>
+      <p id="estado-propuestas" role="status" aria-live="polite">Cargando propuestas...</p>
+
+      <div id="lista-propuestas" class="propuestas__lista"></div>
+
     </section>
 
   </main>
@@ -68,5 +90,4 @@
   <script type="module" src="../assets/js/main.js"></script>
 
 </body>
-
 </html>

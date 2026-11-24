@@ -138,5 +138,21 @@
     "categoria_en": "Society",
     "descripcion_en": "Technology moves forward. But are we building a better future for people—or simply a more profitable one?",
     "alt_en": "An image about artificial intelligence and human work"
-  }
+  },
+  {
+  "id": 11,
+  "categoria": "SOCIEDAD",
+  "titulo": "Lookism: el peso de ser visto",
+  "descripcion": "Cuando la apariencia se convierte en una medida de nuestro valor, incluso mirarnos al espejo puede volverse una comparación.",
+  "autor": "Juan Pablo Zamora Romero",
+  "imagen": "../assets/img/lookism.jpg",
+  "alt": "Persona frente al espejo, reflexionando sobre su apariencia",
+  "enlace": "../articulos/lookism.html",
+  "titulo_en": "Lookism: The Weight of Being Seen",
+  "categoria_en": "Society",
+  "descripcion_en": "When appearance becomes a measure of our worth, even looking in the mirror can turn into a comparison.",
+  "alt_en": "A person looking in the mirror, reflecting on their appearance"
+}
+  
 ]
+
